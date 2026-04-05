@@ -15,7 +15,7 @@ class _AITutorProcessingScreenState extends State<AITutorProcessingScreen> {
   bool _isAnalyzing = true;
   String _statusText = '正在初始化 AI 诊断引擎...';
   bool _isVoiceOn = true;
-  int _currentStage = 0; // 0: Analyzing, 1: Intent, 1.5: Probe, 2: Traceability, 3: Guidance
+  double _currentStage = 0; // 0: Analyzing, 1: Intent, 1.5: Probe, 2: Traceability, 3: Guidance
   Map<String, dynamic>? _matchedNode;
   String? _probeAnswer;
   bool _probeFailed = false;

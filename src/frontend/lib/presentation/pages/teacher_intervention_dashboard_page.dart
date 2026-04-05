@@ -46,7 +46,7 @@ class _TeacherInterventionDashboardState extends State<TeacherInterventionDashbo
                   return Card(
                     elevation: 0,
                     margin: EdgeInsets.only(bottom: 15),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), border: Border.all(color: Colors.blue[50]!)),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: Colors.blue[50]!)),
                     child: ListTile(
                       title: Text(item['concept'], style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue[800])),
                       subtitle: Padding(

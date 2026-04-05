@@ -27,7 +27,7 @@ class LearningHomePage extends StatelessWidget {
                 _buildRecommendationCard("相似比性质", "掌握度较低，提分潜力大", "+5分"),
                 SizedBox(height: 25),
                 _buildSectionTitle("认知聚类错题本 (Ebbinghaus Plan)"),
-                _buildMistakeBookEntry(context, progress.wrongQuestions),
+                _buildFunctionalButton(context, "查看错题本与复习计划", Icons.book, Colors.orange, () => Navigator.push(context, MaterialPageRoute(builder: (context) => MistakeBookPage()))),
                 SizedBox(height: 25),
                 _buildAITutorEntrance(context),
                 SizedBox(height: 25),
