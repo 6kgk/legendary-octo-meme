@@ -1,0 +1,25 @@
+name: vocational_bridge
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.2
+  cupertino_icons: ^1.0.8
+  image_picker: ^1.1.2 # 支持拍照搜题
+  percent_indicator: ^4.2.3 # 支持提分进度可视化
+  sqflite: ^2.3.3+1 # 新增：本地数据库支持 (Task #95)
+  path: ^1.9.0 # 新增：数据库路径支持
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
