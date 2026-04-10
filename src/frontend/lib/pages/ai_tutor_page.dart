@@ -35,7 +35,16 @@ class _AITutorPageState extends State<AITutorPage> {
 
     _scrollToBottom();
 
-    final response = await AIService.getExplanation(text);
+    // 构建多轮对话历史
+    final history = _messages
+        .where((m) => m['role'] != null)
+        .map((m) => {
+              'role': m['role'] == 'ai' ? 'assistant' : 'user',
+              'content': m['content']!,
+            })
+        .toList();
+
+    final response = await AIService.chat(history);
 
     if (mounted) {
       setState(() {
