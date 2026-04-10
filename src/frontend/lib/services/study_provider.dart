@@ -19,6 +19,14 @@ class StudyProvider with ChangeNotifier {
     return _allQuestions.where((q) => q.subject == subject).toList();
   }
 
+  Question? getQuestionById(String id) {
+    try {
+      return _allQuestions.firstWhere((q) => q.id == id);
+    } catch (e) {
+      return null;
+    }
+  }
+
   int getSubjectCount(String subject) {
     return _allQuestions.where((q) => q.subject == subject).length;
   }

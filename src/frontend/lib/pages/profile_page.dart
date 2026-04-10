@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import '../theme.dart';
+import 'favorites_page.dart';
+import 'wrong_answers_page.dart';
+import 'study_stats_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -35,17 +38,18 @@ class ProfilePage extends StatelessWidget {
             ),
             const SizedBox(height: 48),
             
-            _buildMenuItem('学习统计', Icons.bar_chart_outlined),
-            _buildMenuItem('收藏夹', Icons.bookmark_border_outlined),
-            _buildMenuItem('帮助与反馈', Icons.help_outline),
-            _buildMenuItem('关于粤职通', Icons.info_outline),
+            _buildMenuItem(context, '学习统计', Icons.bar_chart_outlined, const StudyStatsPage()),
+            _buildMenuItem(context, '错题本', Icons.assignment_outlined, const WrongAnswersPage()),
+            _buildMenuItem(context, '收藏夹', Icons.bookmark_border_outlined, const FavoritesPage()),
+            _buildMenuItem(context, '帮助与反馈', Icons.help_outline, null),
+            _buildMenuItem(context, '关于粤职通', Icons.info_outline, null),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildMenuItem(String title, IconData icon) {
+  Widget _buildMenuItem(BuildContext context, String title, IconData icon, Widget? targetPage) {
     return Container(
       decoration: const BoxDecoration(
         border: Border(bottom: BorderSide(color: AppColors.divider, width: 0.5)),
@@ -58,7 +62,11 @@ class ProfilePage extends StatelessWidget {
           style: const TextStyle(fontSize: 15, color: AppColors.mainText),
         ),
         trailing: const Icon(Icons.chevron_right, size: 20, color: AppColors.weakText),
-        onTap: () {},
+        onTap: () {
+          if (targetPage != null) {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => targetPage));
+          }
+        },
       ),
     );
   }

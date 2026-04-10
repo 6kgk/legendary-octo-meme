@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/study_provider.dart';
-import '../models/app_models.dart';
+import '../services/storage_service.dart';
 import '../theme.dart';
+import 'package:intl/intl.dart';
 
 class QuizView extends StatefulWidget {
   final String subject;
@@ -15,6 +16,39 @@ class QuizView extends StatefulWidget {
 class _QuizViewState extends State<QuizView> {
   int? _selectedIndex;
   bool _isAnswered = false;
+  final StorageService _storage = StorageService();
+  bool _isFavorite = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkFavorite();
+  }
+
+  Future<void> _checkFavorite() async {
+    final studyProvider = Provider.of<StudyProvider>(context, listen: false);
+    final questions = studyProvider.getQuestionsBySubject(widget.subject);
+    if (questions.isNotEmpty && studyProvider.currentQuestionIndex < questions.length) {
+      final question = questions[studyProvider.currentQuestionIndex];
+      final favorites = await _storage.getFavorites();
+      if (mounted) {
+        setState(() {
+          _isFavorite = favorites.contains(question.id);
+        });
+      }
+    }
+  }
+
+  Future<void> _toggleFavorite(String id) async {
+    if (_isFavorite) {
+      await _storage.removeFavorite(id);
+    } else {
+      await _storage.saveFavorite(id);
+    }
+    setState(() {
+      _isFavorite = !_isFavorite;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +73,11 @@ class _QuizViewState extends State<QuizView> {
       appBar: AppBar(
         title: Text(widget.subject),
         actions: [
+          IconButton(
+            icon: Icon(_isFavorite ? Icons.bookmark : Icons.bookmark_border, 
+                color: _isFavorite ? AppColors.primaryYellow : AppColors.mainText),
+            onPressed: () => _toggleFavorite(question.id),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Center(
@@ -210,7 +249,13 @@ class _QuizViewState extends State<QuizView> {
                 onPressed: _selectedIndex == null
                     ? null
                     : () {
-                        provider.recordAnswer(_selectedIndex == correctAnswer);
+                        bool isCorrect = _selectedIndex == correctAnswer;
+                        provider.recordAnswer(isCorrect);
+                        if (!isCorrect) {
+                          final questions = provider.getQuestionsBySubject(widget.subject);
+                          final question = questions[provider.currentQuestionIndex];
+                          _storage.saveWrongAnswer(question.id);
+                        }
                         setState(() => _isAnswered = true);
                       },
                 child: const Text('提交答案'),
@@ -220,11 +265,20 @@ class _QuizViewState extends State<QuizView> {
             Expanded(
               child: ElevatedButton(
                 onPressed: () {
+                  if (provider.currentQuestionIndex >= total - 1) {
+                    // Quiz finished, save record
+                    final date = DateFormat('yyyy-MM-dd').format(DateTime.now());
+                    _storage.saveStudyRecord(date, widget.subject, provider.correctCount, total);
+                  }
+                  
                   provider.nextQuestion();
                   setState(() {
                     _selectedIndex = null;
                     _isAnswered = false;
                   });
+                  if (provider.currentQuestionIndex < total) {
+                    _checkFavorite();
+                  }
                 },
                 child: Text(provider.currentQuestionIndex < total - 1 ? '下一题' : '查看结果'),
               ),

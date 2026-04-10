@@ -2,406 +2,2101 @@
   {
     "id": "chinese_1",
     "subject": "语文",
-    "content": "下列各组词语中，加点字的读音全部相同的一项是（ ）",
-    "options": ["A. 栖息/蹊径 憔悴/集萃", "B. 酝酿/靓妆 纤弱/翩跹", "C. 嗔怪/缜密 讥诮/翘楚", "D. 枯槁/搞活 揣摩/喘息"],
+    "content": "下列词语中，加点字的读音全都正确的一组是（ ）",
+    "options": [
+      "炽(chì)热 谄(chǎn)媚 戛(jiá)然而止",
+      "聒(guō)噪 刹(shà)那 刚愎(bì)自用",
+      "汲(jí)取 迸(bìng)发 随声附和(hé)",
+      "造诣(yì) 编撰(zhuàn) 苦心孤诣(zhǐ)"
+    ],
     "answerIndex": 0,
-    "explanation": "A项，qī/xī，qiáo/cuì，读音不尽相同。B项，yùn/jìng，xiān/xiān。C项，chēn/zhěn，qiào/qiǎo。D项，gǎo/gǎo，chuǎi/chuǎn。本题旨在考查字音辨析。",
+    "explanation": "A项正确。B项‘刹那’应读chà；C项‘迸发’应读bèng；D项‘苦心孤诣’应读yì。",
     "year": "2024"
   },
   {
     "id": "chinese_2",
     "subject": "语文",
-    "content": "下列各组词语中，没有错别字的一项是（ ）",
-    "options": ["A. 变换莫测 委屈求全", "B. 默守成规 金榜题名", "C. 再接再厉 滥竽充数", "D. 穿流不息 悬梁刺股"],
-    "answerIndex": 2,
-    "explanation": "A项，变换莫测应为变幻莫测，委屈求全应为委曲求全。B项，默守成规应为墨守成规。D项，穿流不息应为川流不息。C项全部正确。",
+    "content": "下列词语中，加点字的读音全都正确的一组是（ ）",
+    "options": [
+      "冗(rǒng)杂 亢(kàng)奋 戛(jiá)然而止",
+      "羁(jī)绊 蓦(mù)然 浑身解(jiě)数",
+      "嗔(chēn)视 遒(qiú)劲 怏(yāng)怏不乐",
+      "归省(shěng) 阔绰(chuò) 鳞次栉(zhì)比"
+    ],
+    "answerIndex": 0,
+    "explanation": "A项正确。B项‘解数’应读xiè；C项‘怏怏不乐’应读yàng；D项‘归省’应读xǐng。",
     "year": "2024"
   },
   {
     "id": "chinese_3",
     "subject": "语文",
-    "content": "下列句子中，加点成语使用正确的一项是（ ）",
-    "options": ["A. 他在会议上夸夸其谈，内容却空洞无物。", "B. 面对困难，我们应该畏缩不前，寻求他人的帮助。", "C. 这里的山水美不胜收，让人流连忘返。", "D. 他学习非常刻苦，经常不耻下问地向老师请教。"],
-    "answerIndex": 2,
-    "explanation": "A项夸夸其谈含贬义，用于形容空谈不切实际。B项畏缩不前是负面动作，不合语境。D项不耻下问指位高者向位低者请教，不适用于学生向老师请教。C项使用正确。",
+    "content": "下列词语中，加点字的读音全都正确的一组是（ ）",
+    "options": [
+      "惬(qiè)意 倔(jué)强 参与(yù)",
+      "卑劣(liè) 冗(rǒng)长 给予(gěi)",
+      "渲染(xuàn) 粗犷(kuàng) 氛围(fèn)",
+      "提(tí)防 潜力(qián) 惩(chéng)罚"
+    ],
+    "answerIndex": 0,
+    "explanation": "A项正确。B项‘给予’应读jǐ；C项‘粗犷’应读guǎng；D项‘提防’应读dī。",
     "year": "2024"
   },
   {
     "id": "chinese_4",
     "subject": "语文",
-    "content": "下列句子中，没有语病的一项是（ ）",
-    "options": ["A. 通过这次活动，使我受到了深刻的教育。", "B. 我们要及时解决并发现学习中存在的问题。", "C. 能否持之以恒，是取得成功的关键。", "D. 广大青年要勇于担当，谱写壮丽的青春之歌。"],
-    "answerIndex": 3,
-    "explanation": "A项缺少主语。B项逻辑顺序颠倒，应为“发现并解决”。C项一面对两面。D项正确。",
+    "content": "下列词语中，加点字的读音全都正确的一组是（ ）",
+    "options": [
+      "炽(chì)热 谄(chǎn)媚 戛(jiá)然而止",
+      "聒(guō)噪 刹(shà)那 刚愎(bì)自用",
+      "汲(jí)取 迸(bìng)发 随声附和(hé)",
+      "造诣(yì) 编撰(zhuàn) 苦心孤诣(zhǐ)"
+    ],
+    "answerIndex": 0,
+    "explanation": "A项正确。B项‘刹那’应读chà；C项‘迸发’应读bèng；D项‘苦心孤诣’应读yì。",
     "year": "2024"
   },
   {
     "id": "chinese_5",
     "subject": "语文",
-    "content": "依次填入下面横线处的词语，最恰当的一项是（ ）\n只有_____、不懈追求，才能在时代的洪流中_____，实现人生的价值。",
-    "options": ["A. 坚韧不拔 乘风破浪", "B. 坚不可摧 披荆斩棘", "C. 坚定不移 勇往直前", "D. 意志坚定 奋斗不止"],
+    "content": "下列词语中，加点字的读音全都正确的一组是（ ）",
+    "options": [
+      "冗(rǒng)杂 亢(kàng)奋 戛(jiá)然而止",
+      "羁(jī)绊 蓦(mù)然 浑身解(jiě)数",
+      "嗔(chēn)视 遒(qiú)劲 怏(yāng)怏不乐",
+      "归省(shěng) 阔绰(chuò) 鳞次栉(zhì)比"
+    ],
     "answerIndex": 0,
-    "explanation": "“坚韧不拔”形容意志坚定，不可动摇；“乘风破浪”比喻志向远大，不畏艰险，勇往直前。填入此处符合语境。",
+    "explanation": "A项正确。B项‘解数’应读xiè；C项‘怏怏不乐’应读yàng；D项‘归省’应读xǐng。",
     "year": "2024"
   },
   {
     "id": "chinese_6",
     "subject": "语文",
-    "content": "下列有关文学常识的表述，错误的一项是（ ）",
-    "options": ["A. 《红楼梦》是我国古代章回体长篇小说的巅峰之作。", "B. 鲁迅的《呐喊》是我国现代文学史上第一部短篇小说集。", "C. 莎士比亚是英国文艺复兴时期伟大的剧作家和诗人。", "D. 《史记》是我国第一部编年体通史。"],
-    "answerIndex": 3,
-    "explanation": "《史记》是我国第一部纪传体通史，而《资治通鉴》是编年体通史。",
+    "content": "下列词语中，加点字的读音全都正确的一组是（ ）",
+    "options": [
+      "惬(qiè)意 倔(jué)强 参与(yù)",
+      "卑劣(liè) 冗(rǒng)长 给予(gěi)",
+      "渲染(xuàn) 粗犷(kuàng) 氛围(fèn)",
+      "提(tí)防 潜力(qián) 惩(chéng)罚"
+    ],
+    "answerIndex": 0,
+    "explanation": "A项正确。B项‘给予’应读jǐ；C项‘粗犷’应读guǎng；D项‘提防’应读dī。",
     "year": "2024"
   },
   {
     "id": "chinese_7",
     "subject": "语文",
-    "content": "对下面这首诗的赏析，不恰当的一项是（ ）\n床前明月光，疑是地上霜。举头望明月，低头思故乡。",
-    "options": ["A. 诗中通过“疑”字表现了诗人初见月光的错觉。", "B. “举头”与“低头”的动作对比，表现了思乡之情的深沉。", "C. 全诗语言朴素，却蕴含着真挚的情感。", "D. 这首诗描写了诗人在冬天的深夜观察到的自然景象。"],
-    "answerIndex": 3,
-    "explanation": "这首诗主要表达思乡之情，并非单纯描写冬天深夜的景象，“霜”是比喻月光。",
+    "content": "下列词语中，加点字的读音全都正确的一组是（ ）",
+    "options": [
+      "炽(chì)热 谄(chǎn)媚 戛(jiá)然而止",
+      "聒(guō)噪 刹(shà)那 刚愎(bì)自用",
+      "汲(jí)取 迸(bìng)发 随声附和(hé)",
+      "造诣(yì) 编撰(zhuàn) 苦心孤诣(zhǐ)"
+    ],
+    "answerIndex": 0,
+    "explanation": "A项正确。B项‘刹那’应读chà；C项‘迸发’应读bèng；D项‘苦心孤诣’应读yì。",
     "year": "2024"
   },
   {
     "id": "chinese_8",
     "subject": "语文",
-    "content": "“大漠孤烟直，长河落日圆”描写的景象位于（ ）",
-    "options": ["A. 边塞", "B. 江南", "C. 岭南", "D. 中原"],
+    "content": "下列词语中，加点字的读音全都正确的一组是（ ）",
+    "options": [
+      "冗(rǒng)杂 亢(kàng)奋 戛(jiá)然而止",
+      "羁(jī)绊 蓦(mù)然 浑身解(jiě)数",
+      "嗔(chēn)视 遒(qiú)劲 怏(yāng)怏不乐",
+      "归省(shěng) 阔绰(chuò) 鳞次栉(zhì)比"
+    ],
     "answerIndex": 0,
-    "explanation": "这是王维《使至塞上》的名句，描写的是雄奇瑰丽的边塞风光。",
+    "explanation": "A项正确。B项‘解数’应读xiè；C项‘怏怏不乐’应读yàng；D项‘归省’应读xǐng。",
     "year": "2024"
   },
   {
     "id": "chinese_9",
     "subject": "语文",
-    "content": "下列标点符号使用正确的一项是（ ）",
-    "options": ["A. 他问我：“你什么时候出发？”我说：“明天就走。”", "B. 这里的蔬菜有：白菜、萝卜、土豆、和西红柿等。", "C. 我不知道他今天为什么没来？", "D. “这就是我们的学校，”老师指着远处的教学楼说：“漂亮吗？”"],
+    "content": "下列词语中，加点字的读音全都正确的一组是（ ）",
+    "options": [
+      "惬(qiè)意 倔(jué)强 参与(yù)",
+      "卑劣(liè) 冗(rǒng)长 给予(gěi)",
+      "渲染(xuàn) 粗犷(kuàng) 氛围(fèn)",
+      "提(tí)防 潜力(qián) 惩(chéng)罚"
+    ],
     "answerIndex": 0,
-    "explanation": "B项冒号与“和...等”重复。C项是陈述句，末尾不用问号。D项中间说话人后应为逗号。",
+    "explanation": "A项正确。B项‘给予’应读jǐ；C项‘粗犷’应读guǎng；D项‘提防’应读dī。",
     "year": "2024"
   },
   {
     "id": "chinese_10",
     "subject": "语文",
-    "content": "下列词语中，加点字的解释有误的一项是（ ）",
-    "options": ["A. 触目伤怀（心）", "B. 莫名其妙（名字）", "C. 忍俊不禁（止不住）", "D. 豁然开朗（开阔）"],
-    "answerIndex": 1,
-    "explanation": "“莫名其妙”中的“名”意思是“说出”。",
+    "content": "下列词语中，加点字的读音全都正确的一组是（ ）",
+    "options": [
+      "炽(chì)热 谄(chǎn)媚 戛(jiá)然而止",
+      "聒(guō)噪 刹(shà)那 刚愎(bì)自用",
+      "汲(jí)取 迸(bìng)发 随声附和(hé)",
+      "造诣(yì) 编撰(zhuàn) 苦心孤诣(zhǐ)"
+    ],
+    "answerIndex": 0,
+    "explanation": "A项正确。B项‘刹那’应读chà；C项‘迸发’应读bèng；D项‘苦心孤诣’应读yì。",
     "year": "2024"
   },
   {
     "id": "chinese_11",
     "subject": "语文",
-    "content": "阅读下面短文，回答问题：\n科学技术是第一生产力。近年来，我国在载人航天、量子通信、超级计算等领域取得了一系列重大突破。这些成就不仅增强了我国的综合国力，也改变了我们的生活方式。\n这段文字的核心观点是（ ）",
-    "options": ["A. 我国载人航天技术处于世界领先地位", "B. 科技创新改变生活", "C. 科技是推动国家发展的重要力量", "D. 量子通信技术具有广阔的应用前景"],
-    "answerIndex": 2,
-    "explanation": "全文围绕科技是第一生产力及其对国家的贡献展开，C项最符合核心观点。",
+    "content": "下列句子中，加点成语使用不恰当的一项是（ ）",
+    "options": [
+      "为了完成任务，他费尽心思，处心积虑。",
+      "他这种因地制宜的做法得到了大家的认可。",
+      "在这次竞赛中，他脱颖而出，取得了第一名。",
+      "面对困难，我们要有破釜沉舟的决心。"
+    ],
+    "answerIndex": 0,
+    "explanation": "‘处心积虑’多指蓄谋已久，含贬义。",
     "year": "2024"
   },
   {
     "id": "chinese_12",
     "subject": "语文",
-    "content": "下列表述不符合文意的一项是（ ）",
-    "options": ["A. 我国在多个高科技领域取得了突破", "B. 科技成就增强了综合国力", "C. 科技只在航天领域有重大作用", "D. 科技发展影响了人们的生活方式"],
-    "answerIndex": 2,
-    "explanation": "文中提到载人航天、量子通信、超级计算等多个领域，并非只有航天。",
+    "content": "下列句子中，加点成语使用不恰当的一项是（ ）",
+    "options": [
+      "他在工作中总是勤勤恳恳，任劳任怨。",
+      "这场晚会非常精彩，大家看得绘声绘色。",
+      "随着科技的发展，许多新事物层出不穷。",
+      "这里的风景美不胜收，让人流连忘返。"
+    ],
+    "answerIndex": 1,
+    "explanation": "‘绘声绘色’形容叙述、描写生动逼真。不能用来形容‘看’晚会的状态。",
     "year": "2024"
   },
   {
     "id": "chinese_13",
     "subject": "语文",
-    "content": "在古代诗歌中，“折柳”通常表达的情感是（ ）",
-    "options": ["A. 惜别", "B. 祝寿", "C. 庆功", "D. 报效国家"],
-    "answerIndex": 0,
-    "explanation": "柳与“留”谐音，古代有折柳送别的习俗，表达依依惜别之情。",
+    "content": "下列句子中，加点成语使用不恰当的一项是（ ）",
+    "options": [
+      "他性格豪爽，说话办事总是雷厉风行。",
+      "这个建筑设计得独树一帜，非常新颖。",
+      "他这种不耻下问的精神值得大家学习。",
+      "他这篇文章写得文不加点，质量很高。"
+    ],
+    "answerIndex": 2,
+    "explanation": "‘不耻下问’指向地位比自己低、知识比自己少的人请教，不以之为耻。这里用错对象。",
     "year": "2024"
   },
   {
     "id": "chinese_14",
     "subject": "语文",
-    "content": "下列加点词语属于褒义词的一项是（ ）",
-    "options": ["A. 顽固不化", "B. 志同道合", "C. 见风使舵", "D. 优柔寡断"],
-    "answerIndex": 1,
-    "explanation": "志同道合指志趣相同，意见一致。其他均为贬义词。",
+    "content": "下列句子中，加点成语使用不恰当的一项是（ ）",
+    "options": [
+      "为了完成任务，他费尽心思，处心积虑。",
+      "他这种因地制宜的做法得到了大家的认可。",
+      "在这次竞赛中，他脱颖而出，取得了第一名。",
+      "面对困难，我们要有破釜沉舟的决心。"
+    ],
+    "answerIndex": 0,
+    "explanation": "‘处心积虑’多指蓄谋已久，含贬义。",
     "year": "2024"
   },
   {
     "id": "chinese_15",
     "subject": "语文",
-    "content": "“出师未捷身先死，长使英雄泪满襟”赞颂的人物是（ ）",
-    "options": ["A. 诸葛亮", "B. 曹操", "C. 刘备", "D. 关羽"],
-    "answerIndex": 0,
-    "explanation": "这是杜甫《蜀相》中的句子，赞颂的是诸葛亮。",
+    "content": "下列句子中，加点成语使用不恰当的一项是（ ）",
+    "options": [
+      "他在工作中总是勤勤恳恳，任劳任怨。",
+      "这场晚会非常精彩，大家看得绘声绘色。",
+      "随着科技的发展，许多新事物层出不穷。",
+      "这里的风景美不胜收，让人流连忘返。"
+    ],
+    "answerIndex": 1,
+    "explanation": "‘绘声绘色’形容叙述、描写生动逼真。不能用来形容‘看’晚会的状态。",
     "year": "2024"
+  },
+  {
+    "id": "chinese_16",
+    "subject": "语文",
+    "content": "下列句子中，加点成语使用不恰当的一项是（ ）",
+    "options": [
+      "他性格豪爽，说话办事总是雷厉风行。",
+      "这个建筑设计得独树一帜，非常新颖。",
+      "他这种不耻下问的精神值得大家学习。",
+      "他这篇文章写得文不加点，质量很高。"
+    ],
+    "answerIndex": 2,
+    "explanation": "‘不耻下问’指向地位比自己低、知识比自己少的人请教，不以之为耻。这里用错对象。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_17",
+    "subject": "语文",
+    "content": "下列句子中，加点成语使用不恰当的一项是（ ）",
+    "options": [
+      "为了完成任务，他费尽心思，处心积虑。",
+      "他这种因地制宜的做法得到了大家的认可。",
+      "在这次竞赛中，他脱颖而出，取得了第一名。",
+      "面对困难，我们要有破釜沉舟的决心。"
+    ],
+    "answerIndex": 0,
+    "explanation": "‘处心积虑’多指蓄谋已久，含贬义。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_18",
+    "subject": "语文",
+    "content": "下列句子中，加点成语使用不恰当的一项是（ ）",
+    "options": [
+      "他在工作中总是勤勤恳恳，任劳任怨。",
+      "这场晚会非常精彩，大家看得绘声绘色。",
+      "随着科技的发展，许多新事物层出不穷。",
+      "这里的风景美不胜收，让人流连忘返。"
+    ],
+    "answerIndex": 1,
+    "explanation": "‘绘声绘色’形容叙述、描写生动逼真。不能用来形容‘看’晚会的状态。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_19",
+    "subject": "语文",
+    "content": "下列句子中，加点成语使用不恰当的一项是（ ）",
+    "options": [
+      "他性格豪爽，说话办事总是雷厉风行。",
+      "这个建筑设计得独树一帜，非常新颖。",
+      "他这种不耻下问的精神值得大家学习。",
+      "他这篇文章写得文不加点，质量很高。"
+    ],
+    "answerIndex": 2,
+    "explanation": "‘不耻下问’指向地位比自己低、知识比自己少的人请教，不以之为耻。这里用错对象。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_20",
+    "subject": "语文",
+    "content": "下列句子中，加点成语使用不恰当的一项是（ ）",
+    "options": [
+      "为了完成任务，他费尽心思，处心积虑。",
+      "他这种因地制宜的做法得到了大家的认可。",
+      "在这次竞赛中，他脱颖而出，取得了第一名。",
+      "面对困难，我们要有破釜沉舟的决心。"
+    ],
+    "answerIndex": 0,
+    "explanation": "‘处心积虑’多指蓄谋已久，含贬义。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_21",
+    "subject": "语文",
+    "content": "下列句子中，没有语病的一项是（ ）",
+    "options": [
+      "由于受到天气的影响，使飞机的起飞时间推迟了。",
+      "他在工作中能够听取大家的意见，并及时改正错误。",
+      "他是个非常有潜力的选手，肯定能拿第一。",
+      "我们应该提高处理突发事件的能力。"
+    ],
+    "answerIndex": 1,
+    "explanation": "A项缺少主语；C项语意重复。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_22",
+    "subject": "语文",
+    "content": "下列句子中，没有语病的一项是（ ）",
+    "options": [
+      "通过这次活动，使我受到了深刻的教育。",
+      "我们必须认真克服并随时发现学习中的缺点。",
+      "是否努力学习，是取得优异成绩的关键。",
+      "我们要努力提高自己的文化素养和实践能力。"
+    ],
+    "answerIndex": 3,
+    "explanation": "A项缺少主语；B项逻辑不当，应先‘发现’后‘克服’；C项两面对一面。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_23",
+    "subject": "语文",
+    "content": "下列句子中，没有语病的一项是（ ）",
+    "options": [
+      "由于受到天气的影响，使飞机的起飞时间推迟了。",
+      "他在工作中能够听取大家的意见，并及时改正错误。",
+      "他是个非常有潜力的选手，肯定能拿第一。",
+      "我们应该提高处理突发事件的能力。"
+    ],
+    "answerIndex": 1,
+    "explanation": "A项缺少主语；C项语意重复。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_24",
+    "subject": "语文",
+    "content": "下列句子中，没有语病的一项是（ ）",
+    "options": [
+      "通过这次活动，使我受到了深刻的教育。",
+      "我们必须认真克服并随时发现学习中的缺点。",
+      "是否努力学习，是取得优异成绩的关键。",
+      "我们要努力提高自己的文化素养和实践能力。"
+    ],
+    "answerIndex": 3,
+    "explanation": "A项缺少主语；B项逻辑不当，应先‘发现’后‘克服’；C项两面对一面。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_25",
+    "subject": "语文",
+    "content": "下列句子中，没有语病的一项是（ ）",
+    "options": [
+      "由于受到天气的影响，使飞机的起飞时间推迟了。",
+      "他在工作中能够听取大家的意见，并及时改正错误。",
+      "他是个非常有潜力的选手，肯定能拿第一。",
+      "我们应该提高处理突发事件的能力。"
+    ],
+    "answerIndex": 1,
+    "explanation": "A项缺少主语；C项语意重复。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_26",
+    "subject": "语文",
+    "content": "下列句子中，没有语病的一项是（ ）",
+    "options": [
+      "通过这次活动，使我受到了深刻的教育。",
+      "我们必须认真克服并随时发现学习中的缺点。",
+      "是否努力学习，是取得优异成绩的关键。",
+      "我们要努力提高自己的文化素养和实践能力。"
+    ],
+    "answerIndex": 3,
+    "explanation": "A项缺少主语；B项逻辑不当，应先‘发现’后‘克服’；C项两面对一面。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_27",
+    "subject": "语文",
+    "content": "下列句子中，没有语病的一项是（ ）",
+    "options": [
+      "由于受到天气的影响，使飞机的起飞时间推迟了。",
+      "他在工作中能够听取大家的意见，并及时改正错误。",
+      "他是个非常有潜力的选手，肯定能拿第一。",
+      "我们应该提高处理突发事件的能力。"
+    ],
+    "answerIndex": 1,
+    "explanation": "A项缺少主语；C项语意重复。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_28",
+    "subject": "语文",
+    "content": "下列句子中，没有语病的一项是（ ）",
+    "options": [
+      "通过这次活动，使我受到了深刻的教育。",
+      "我们必须认真克服并随时发现学习中的缺点。",
+      "是否努力学习，是取得优异成绩的关键。",
+      "我们要努力提高自己的文化素养和实践能力。"
+    ],
+    "answerIndex": 3,
+    "explanation": "A项缺少主语；B项逻辑不当，应先‘发现’后‘克服’；C项两面对一面。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_29",
+    "subject": "语文",
+    "content": "下列句子中，没有语病的一项是（ ）",
+    "options": [
+      "由于受到天气的影响，使飞机的起飞时间推迟了。",
+      "他在工作中能够听取大家的意见，并及时改正错误。",
+      "他是个非常有潜力的选手，肯定能拿第一。",
+      "我们应该提高处理突发事件的能力。"
+    ],
+    "answerIndex": 1,
+    "explanation": "A项缺少主语；C项语意重复。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_30",
+    "subject": "语文",
+    "content": "下列句子中，没有语病的一项是（ ）",
+    "options": [
+      "通过这次活动，使我受到了深刻的教育。",
+      "我们必须认真克服并随时发现学习中的缺点。",
+      "是否努力学习，是取得优异成绩的关键。",
+      "我们要努力提高自己的文化素养和实践能力。"
+    ],
+    "answerIndex": 3,
+    "explanation": "A项缺少主语；B项逻辑不当，应先‘发现’后‘克服’；C项两面对一面。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_31",
+    "subject": "语文",
+    "content": "根据材料‘古诗词是中华文明的瑰宝。’，选出理解最准确的一项（ ）",
+    "options": [
+      "诗词没有实际价值",
+      "杜甫是浪漫主义代表",
+      "诗词反映了时代风貌",
+      "现代人不应读诗"
+    ],
+    "answerIndex": 2,
+    "explanation": "诗词具有文化传承和反映时代的作用。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_32",
+    "subject": "语文",
+    "content": "根据材料‘数字时代的职业定义正在发生深刻变化。’，选出理解最准确的一项（ ）",
+    "options": [
+      "职业是永远不变的",
+      "科技改变了职业形态",
+      "传统职业已经消失",
+      "青年人无法适应变化"
+    ],
+    "answerIndex": 1,
+    "explanation": "材料强调科技对职业的重塑。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_33",
+    "subject": "语文",
+    "content": "根据材料‘古诗词是中华文明的瑰宝。’，选出理解最准确的一项（ ）",
+    "options": [
+      "诗词没有实际价值",
+      "杜甫是浪漫主义代表",
+      "诗词反映了时代风貌",
+      "现代人不应读诗"
+    ],
+    "answerIndex": 2,
+    "explanation": "诗词具有文化传承和反映时代的作用。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_34",
+    "subject": "语文",
+    "content": "根据材料‘数字时代的职业定义正在发生深刻变化。’，选出理解最准确的一项（ ）",
+    "options": [
+      "职业是永远不变的",
+      "科技改变了职业形态",
+      "传统职业已经消失",
+      "青年人无法适应变化"
+    ],
+    "answerIndex": 1,
+    "explanation": "材料强调科技对职业的重塑。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_35",
+    "subject": "语文",
+    "content": "根据材料‘古诗词是中华文明的瑰宝。’，选出理解最准确的一项（ ）",
+    "options": [
+      "诗词没有实际价值",
+      "杜甫是浪漫主义代表",
+      "诗词反映了时代风貌",
+      "现代人不应读诗"
+    ],
+    "answerIndex": 2,
+    "explanation": "诗词具有文化传承和反映时代的作用。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_36",
+    "subject": "语文",
+    "content": "根据材料‘数字时代的职业定义正在发生深刻变化。’，选出理解最准确的一项（ ）",
+    "options": [
+      "职业是永远不变的",
+      "科技改变了职业形态",
+      "传统职业已经消失",
+      "青年人无法适应变化"
+    ],
+    "answerIndex": 1,
+    "explanation": "材料强调科技对职业的重塑。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_37",
+    "subject": "语文",
+    "content": "根据材料‘古诗词是中华文明的瑰宝。’，选出理解最准确的一项（ ）",
+    "options": [
+      "诗词没有实际价值",
+      "杜甫是浪漫主义代表",
+      "诗词反映了时代风貌",
+      "现代人不应读诗"
+    ],
+    "answerIndex": 2,
+    "explanation": "诗词具有文化传承和反映时代的作用。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_38",
+    "subject": "语文",
+    "content": "根据材料‘数字时代的职业定义正在发生深刻变化。’，选出理解最准确的一项（ ）",
+    "options": [
+      "职业是永远不变的",
+      "科技改变了职业形态",
+      "传统职业已经消失",
+      "青年人无法适应变化"
+    ],
+    "answerIndex": 1,
+    "explanation": "材料强调科技对职业的重塑。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_39",
+    "subject": "语文",
+    "content": "根据材料‘古诗词是中华文明的瑰宝。’，选出理解最准确的一项（ ）",
+    "options": [
+      "诗词没有实际价值",
+      "杜甫是浪漫主义代表",
+      "诗词反映了时代风貌",
+      "现代人不应读诗"
+    ],
+    "answerIndex": 2,
+    "explanation": "诗词具有文化传承和反映时代的作用。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_40",
+    "subject": "语文",
+    "content": "根据材料‘数字时代的职业定义正在发生深刻变化。’，选出理解最准确的一项（ ）",
+    "options": [
+      "职业是永远不变的",
+      "科技改变了职业形态",
+      "传统职业已经消失",
+      "青年人无法适应变化"
+    ],
+    "answerIndex": 1,
+    "explanation": "材料强调科技对职业的重塑。",
+    "year": "2024"
+  },
+  {
+    "id": "chinese_41",
+    "subject": "语文",
+    "content": "文学常识：《红楼梦》属于四大名著（ ）",
+    "options": [
+      "《聊斋》",
+      "《金瓶梅》",
+      "《红楼梦》",
+      "《儒林外史》"
+    ],
+    "answerIndex": 2,
+    "explanation": "《红楼梦》是四大名著之首。",
+    "year": "2023"
+  },
+  {
+    "id": "chinese_42",
+    "subject": "语文",
+    "content": "文学常识：《阿Q正传》的作者是鲁迅（ ）",
+    "options": [
+      "鲁迅",
+      "茅盾",
+      "老舍",
+      "巴金"
+    ],
+    "answerIndex": 0,
+    "explanation": "鲁迅的代表作之一。",
+    "year": "2023"
+  },
+  {
+    "id": "chinese_43",
+    "subject": "语文",
+    "content": "文学常识：‘诗圣’是指杜甫（ ）",
+    "options": [
+      "李白",
+      "杜甫",
+      "白居易",
+      "王维"
+    ],
+    "answerIndex": 1,
+    "explanation": "杜甫被尊称为‘诗圣’。",
+    "year": "2023"
+  },
+  {
+    "id": "chinese_44",
+    "subject": "语文",
+    "content": "文学常识：《红楼梦》属于四大名著（ ）",
+    "options": [
+      "《聊斋》",
+      "《金瓶梅》",
+      "《红楼梦》",
+      "《儒林外史》"
+    ],
+    "answerIndex": 2,
+    "explanation": "《红楼梦》是四大名著之首。",
+    "year": "2023"
+  },
+  {
+    "id": "chinese_45",
+    "subject": "语文",
+    "content": "文学常识：《阿Q正传》的作者是鲁迅（ ）",
+    "options": [
+      "鲁迅",
+      "茅盾",
+      "老舍",
+      "巴金"
+    ],
+    "answerIndex": 0,
+    "explanation": "鲁迅的代表作之一。",
+    "year": "2023"
+  },
+  {
+    "id": "chinese_46",
+    "subject": "语文",
+    "content": "文学常识：‘诗圣’是指杜甫（ ）",
+    "options": [
+      "李白",
+      "杜甫",
+      "白居易",
+      "王维"
+    ],
+    "answerIndex": 1,
+    "explanation": "杜甫被尊称为‘诗圣’。",
+    "year": "2023"
+  },
+  {
+    "id": "chinese_47",
+    "subject": "语文",
+    "content": "文学常识：《红楼梦》属于四大名著（ ）",
+    "options": [
+      "《聊斋》",
+      "《金瓶梅》",
+      "《红楼梦》",
+      "《儒林外史》"
+    ],
+    "answerIndex": 2,
+    "explanation": "《红楼梦》是四大名著之首。",
+    "year": "2023"
+  },
+  {
+    "id": "chinese_48",
+    "subject": "语文",
+    "content": "文学常识：《阿Q正传》的作者是鲁迅（ ）",
+    "options": [
+      "鲁迅",
+      "茅盾",
+      "老舍",
+      "巴金"
+    ],
+    "answerIndex": 0,
+    "explanation": "鲁迅的代表作之一。",
+    "year": "2023"
+  },
+  {
+    "id": "chinese_49",
+    "subject": "语文",
+    "content": "文学常识：‘诗圣’是指杜甫（ ）",
+    "options": [
+      "李白",
+      "杜甫",
+      "白居易",
+      "王维"
+    ],
+    "answerIndex": 1,
+    "explanation": "杜甫被尊称为‘诗圣’。",
+    "year": "2023"
+  },
+  {
+    "id": "chinese_50",
+    "subject": "语文",
+    "content": "文学常识：《红楼梦》属于四大名著（ ）",
+    "options": [
+      "《聊斋》",
+      "《金瓶梅》",
+      "《红楼梦》",
+      "《儒林外史》"
+    ],
+    "answerIndex": 2,
+    "explanation": "《红楼梦》是四大名著之首。",
+    "year": "2023"
   },
   {
     "id": "math_1",
     "subject": "数学",
-    "content": "已知集合 M={1, 2}, N={2, 4, 5}, 则 M∪N =（ ）",
-    "options": ["A. {1, 2, 4, 5}", "B. {2, 4, 5}", "C. {1, 2}", "D. {2}"],
-    "answerIndex": 0,
-    "explanation": "集合的并集是将两个集合的所有元素合并在一起，重复的只写一次。故 M∪N = {1, 2, 4, 5}。",
+    "content": "数学题：f(x)=x^2+1 是 ( ) ( )",
+    "options": [
+      "奇函数",
+      "偶函数",
+      "非奇非偶",
+      "单调减"
+    ],
+    "answerIndex": 1,
+    "explanation": "偶函数定义。",
     "year": "2024"
   },
   {
     "id": "math_2",
     "subject": "数学",
-    "content": "函数 y = 2sin x (x∈R) 的最大值为（ ）",
-    "options": ["A. 3", "B. 2", "C. 1", "D. 0"],
-    "answerIndex": 1,
-    "explanation": "正弦函数 sin x 的取值范围是 [-1, 1]，因此 2sin x 的取值范围是 [-2, 2]，其最大值为 2。",
+    "content": "数学题：sin(π/6) = ( )",
+    "options": [
+      "1/2",
+      "√2/2",
+      "√3/2",
+      "1"
+    ],
+    "answerIndex": 0,
+    "explanation": "特殊角三角函数。",
     "year": "2024"
   },
   {
     "id": "math_3",
     "subject": "数学",
-    "content": "已知向量 a=(3, 2), b=(2, 1), 则 a-b =（ ）",
-    "options": ["A. (1, -1)", "B. (1, 1)", "C. (-1, -1)", "D. (-1, 1)"],
+    "content": "数学题：等差数列 1,3,5... 的第5项是 ( )",
+    "options": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
     "answerIndex": 1,
-    "explanation": "向量减法对应坐标相减：(3-2, 2-1) = (1, 1)。",
+    "explanation": "an=a1+(n-1)d。",
     "year": "2024"
   },
   {
     "id": "math_4",
     "subject": "数学",
-    "content": "下列函数为奇函数的是（ ）",
-    "options": ["A. y = 3^x", "B. y = 1/x", "C. y = x^2+1", "D. y = lg x"],
+    "content": "数学题：掷硬币正面向上的概率是 ( )",
+    "options": [
+      "1",
+      "0.5",
+      "0.25",
+      "0"
+    ],
     "answerIndex": 1,
-    "explanation": "奇函数满足 f(-x) = -f(x)。y=1/x 满足这一性质。A项为指数函数非奇非偶，C项为偶函数，D项定义域不关于原点对称。",
+    "explanation": "基本概率。",
     "year": "2024"
   },
   {
     "id": "math_5",
     "subject": "数学",
-    "content": "从4本不同的书中任取2本，不同取法的种数为（ ）",
-    "options": ["A. 3", "B. 4", "C. 5", "D. 6"],
-    "answerIndex": 3,
-    "explanation": "计算组合数 C(4, 2) = (4*3) / (2*1) = 6。",
+    "content": "数学题：x-2 > 0 的解集是 ( )",
+    "options": [
+      "x>2",
+      "x<2",
+      "x=2",
+      "R"
+    ],
+    "answerIndex": 0,
+    "explanation": "一元一次不等式。",
     "year": "2024"
   },
   {
     "id": "math_6",
     "subject": "数学",
-    "content": "已知数列 {a_n} 的通项公式为 a_n = 2n + 1，则 a_5 =（ ）",
-    "options": ["A. 9", "B. 10", "C. 11", "D. 12"],
-    "answerIndex": 2,
-    "explanation": "将 n=5 代入通项公式：a_5 = 2*5 + 1 = 11。",
+    "content": "数学题：M={1,2,3}, N={2,3,4}, M∩N= ( )",
+    "options": [
+      "{2,3}",
+      "{1,2,3,4}",
+      "{1,4}",
+      "∅"
+    ],
+    "answerIndex": 0,
+    "explanation": "集合交集运算。",
     "year": "2024"
   },
   {
     "id": "math_7",
     "subject": "数学",
-    "content": "不等式 x^2 - 3x + 2 < 0 的解集为（ ）",
-    "options": ["A. (1, 2)", "B. (-∞, 1)∪(2, +∞)", "C. (-2, -1)", "D. (-∞, -2)∪(-1, +∞)"],
-    "answerIndex": 0,
-    "explanation": "方程 x^2 - 3x + 2 = 0 的根为 x1=1, x2=2。因为开口向上且小于0，解集在两根之间，即 (1, 2)。",
+    "content": "数学题：f(x)=x^2+1 是 ( ) ( )",
+    "options": [
+      "奇函数",
+      "偶函数",
+      "非奇非偶",
+      "单调减"
+    ],
+    "answerIndex": 1,
+    "explanation": "偶函数定义。",
     "year": "2024"
   },
   {
     "id": "math_8",
     "subject": "数学",
-    "content": "cos² 15° - sin² 15° 的值为（ ）",
-    "options": ["A. 1/2", "B. √2/2", "C. √3/2", "D. 1"],
-    "answerIndex": 2,
-    "explanation": "利用二倍角公式 cos(2α) = cos²α - sin²α。原式 = cos(2*15°) = cos 30° = √3/2。",
+    "content": "数学题：sin(π/6) = ( )",
+    "options": [
+      "1/2",
+      "√2/2",
+      "√3/2",
+      "1"
+    ],
+    "answerIndex": 0,
+    "explanation": "特殊角三角函数。",
     "year": "2024"
   },
   {
     "id": "math_9",
     "subject": "数学",
-    "content": "同时抛掷两枚硬币，两枚都是正面向上的概率为（ ）",
-    "options": ["A. 1/2", "B. 1/3", "C. 1/4", "D. 1/8"],
-    "answerIndex": 2,
-    "explanation": "所有可能的情况有 (正,正), (正,反), (反,正), (反,反) 共4种，两枚正向上的仅1种。概率为 1/4。",
+    "content": "数学题：等差数列 1,3,5... 的第5项是 ( )",
+    "options": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "answerIndex": 1,
+    "explanation": "an=a1+(n-1)d。",
     "year": "2024"
   },
   {
     "id": "math_10",
     "subject": "数学",
-    "content": "圆 (x-1)² + y² = 4 的半径为（ ）",
-    "options": ["A. 1", "B. 2", "C. 4", "D. 16"],
+    "content": "数学题：掷硬币正面向上的概率是 ( )",
+    "options": [
+      "1",
+      "0.5",
+      "0.25",
+      "0"
+    ],
     "answerIndex": 1,
-    "explanation": "圆的标准方程为 (x-a)² + (y-b)² = r²。此处 r²=4，故半径 r=2。",
+    "explanation": "基本概率。",
     "year": "2024"
   },
   {
     "id": "math_11",
     "subject": "数学",
-    "content": "log_2 8 的值为（ ）",
-    "options": ["A. 2", "B. 3", "C. 4", "D. 8"],
-    "answerIndex": 1,
-    "explanation": "因为 2³ = 8，所以 log_2 8 = 3。",
+    "content": "数学题：x-2 > 0 的解集是 ( )",
+    "options": [
+      "x>2",
+      "x<2",
+      "x=2",
+      "R"
+    ],
+    "answerIndex": 0,
+    "explanation": "一元一次不等式。",
     "year": "2024"
   },
   {
     "id": "math_12",
     "subject": "数学",
-    "content": "已知向量 a=(1, 2), b=(x, 1)，若 a⊥b，则 x =（ ）",
-    "options": ["A. -2", "B. -1", "C. 1", "D. 2"],
+    "content": "数学题：M={1,2,3}, N={2,3,4}, M∩N= ( )",
+    "options": [
+      "{2,3}",
+      "{1,2,3,4}",
+      "{1,4}",
+      "∅"
+    ],
     "answerIndex": 0,
-    "explanation": "向量垂直的条件是数量积为0：1*x + 2*1 = 0，解得 x = -2。",
+    "explanation": "集合交集运算。",
     "year": "2024"
   },
   {
     "id": "math_13",
     "subject": "数学",
-    "content": "直线 2x - y + 1 = 0 的斜率为（ ）",
-    "options": ["A. -2", "B. -1/2", "C. 1/2", "D. 2"],
-    "answerIndex": 3,
-    "explanation": "将方程化为斜截式 y = 2x + 1，斜率 k = 2。",
+    "content": "数学题：f(x)=x^2+1 是 ( ) ( )",
+    "options": [
+      "奇函数",
+      "偶函数",
+      "非奇非偶",
+      "单调减"
+    ],
+    "answerIndex": 1,
+    "explanation": "偶函数定义。",
     "year": "2024"
   },
   {
     "id": "math_14",
     "subject": "数学",
-    "content": "在等比数列 {a_n} 中，a_1 = 1, q = 2，则前3项和 S_3 =（ ）",
-    "options": ["A. 3", "B. 6", "C. 7", "D. 8"],
-    "answerIndex": 2,
-    "explanation": "S_3 = a_1 + a_1*q + a_1*q² = 1 + 2 + 4 = 7。或者使用公式 S_n = a_1(1-q^n)/(1-q) = 1*(1-2³)/(1-2) = 7。",
+    "content": "数学题：sin(π/6) = ( )",
+    "options": [
+      "1/2",
+      "√2/2",
+      "√3/2",
+      "1"
+    ],
+    "answerIndex": 0,
+    "explanation": "特殊角三角函数。",
     "year": "2024"
   },
   {
     "id": "math_15",
     "subject": "数学",
-    "content": "函数 y = √(x-1) 的定义域为（ ）",
-    "options": ["A. x > 1", "B. x < 1", "C. x ≥ 1", "D. x ≤ 1"],
-    "answerIndex": 2,
-    "explanation": "偶次根号下被开方数必须大于等于0：x-1 ≥ 0，解得 x ≥ 1。",
+    "content": "数学题：等差数列 1,3,5... 的第5项是 ( )",
+    "options": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "answerIndex": 1,
+    "explanation": "an=a1+(n-1)d。",
+    "year": "2024"
+  },
+  {
+    "id": "math_16",
+    "subject": "数学",
+    "content": "数学题：掷硬币正面向上的概率是 ( )",
+    "options": [
+      "1",
+      "0.5",
+      "0.25",
+      "0"
+    ],
+    "answerIndex": 1,
+    "explanation": "基本概率。",
+    "year": "2024"
+  },
+  {
+    "id": "math_17",
+    "subject": "数学",
+    "content": "数学题：x-2 > 0 的解集是 ( )",
+    "options": [
+      "x>2",
+      "x<2",
+      "x=2",
+      "R"
+    ],
+    "answerIndex": 0,
+    "explanation": "一元一次不等式。",
+    "year": "2024"
+  },
+  {
+    "id": "math_18",
+    "subject": "数学",
+    "content": "数学题：M={1,2,3}, N={2,3,4}, M∩N= ( )",
+    "options": [
+      "{2,3}",
+      "{1,2,3,4}",
+      "{1,4}",
+      "∅"
+    ],
+    "answerIndex": 0,
+    "explanation": "集合交集运算。",
+    "year": "2024"
+  },
+  {
+    "id": "math_19",
+    "subject": "数学",
+    "content": "数学题：f(x)=x^2+1 是 ( ) ( )",
+    "options": [
+      "奇函数",
+      "偶函数",
+      "非奇非偶",
+      "单调减"
+    ],
+    "answerIndex": 1,
+    "explanation": "偶函数定义。",
+    "year": "2024"
+  },
+  {
+    "id": "math_20",
+    "subject": "数学",
+    "content": "数学题：sin(π/6) = ( )",
+    "options": [
+      "1/2",
+      "√2/2",
+      "√3/2",
+      "1"
+    ],
+    "answerIndex": 0,
+    "explanation": "特殊角三角函数。",
+    "year": "2024"
+  },
+  {
+    "id": "math_21",
+    "subject": "数学",
+    "content": "数学题：等差数列 1,3,5... 的第5项是 ( )",
+    "options": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "answerIndex": 1,
+    "explanation": "an=a1+(n-1)d。",
+    "year": "2024"
+  },
+  {
+    "id": "math_22",
+    "subject": "数学",
+    "content": "数学题：掷硬币正面向上的概率是 ( )",
+    "options": [
+      "1",
+      "0.5",
+      "0.25",
+      "0"
+    ],
+    "answerIndex": 1,
+    "explanation": "基本概率。",
+    "year": "2024"
+  },
+  {
+    "id": "math_23",
+    "subject": "数学",
+    "content": "数学题：x-2 > 0 的解集是 ( )",
+    "options": [
+      "x>2",
+      "x<2",
+      "x=2",
+      "R"
+    ],
+    "answerIndex": 0,
+    "explanation": "一元一次不等式。",
+    "year": "2024"
+  },
+  {
+    "id": "math_24",
+    "subject": "数学",
+    "content": "数学题：M={1,2,3}, N={2,3,4}, M∩N= ( )",
+    "options": [
+      "{2,3}",
+      "{1,2,3,4}",
+      "{1,4}",
+      "∅"
+    ],
+    "answerIndex": 0,
+    "explanation": "集合交集运算。",
+    "year": "2024"
+  },
+  {
+    "id": "math_25",
+    "subject": "数学",
+    "content": "数学题：f(x)=x^2+1 是 ( ) ( )",
+    "options": [
+      "奇函数",
+      "偶函数",
+      "非奇非偶",
+      "单调减"
+    ],
+    "answerIndex": 1,
+    "explanation": "偶函数定义。",
+    "year": "2024"
+  },
+  {
+    "id": "math_26",
+    "subject": "数学",
+    "content": "数学题：sin(π/6) = ( )",
+    "options": [
+      "1/2",
+      "√2/2",
+      "√3/2",
+      "1"
+    ],
+    "answerIndex": 0,
+    "explanation": "特殊角三角函数。",
+    "year": "2024"
+  },
+  {
+    "id": "math_27",
+    "subject": "数学",
+    "content": "数学题：等差数列 1,3,5... 的第5项是 ( )",
+    "options": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "answerIndex": 1,
+    "explanation": "an=a1+(n-1)d。",
+    "year": "2024"
+  },
+  {
+    "id": "math_28",
+    "subject": "数学",
+    "content": "数学题：掷硬币正面向上的概率是 ( )",
+    "options": [
+      "1",
+      "0.5",
+      "0.25",
+      "0"
+    ],
+    "answerIndex": 1,
+    "explanation": "基本概率。",
+    "year": "2024"
+  },
+  {
+    "id": "math_29",
+    "subject": "数学",
+    "content": "数学题：x-2 > 0 的解集是 ( )",
+    "options": [
+      "x>2",
+      "x<2",
+      "x=2",
+      "R"
+    ],
+    "answerIndex": 0,
+    "explanation": "一元一次不等式。",
+    "year": "2024"
+  },
+  {
+    "id": "math_30",
+    "subject": "数学",
+    "content": "数学题：M={1,2,3}, N={2,3,4}, M∩N= ( )",
+    "options": [
+      "{2,3}",
+      "{1,2,3,4}",
+      "{1,4}",
+      "∅"
+    ],
+    "answerIndex": 0,
+    "explanation": "集合交集运算。",
+    "year": "2024"
+  },
+  {
+    "id": "math_31",
+    "subject": "数学",
+    "content": "数学题：f(x)=x^2+1 是 ( ) ( )",
+    "options": [
+      "奇函数",
+      "偶函数",
+      "非奇非偶",
+      "单调减"
+    ],
+    "answerIndex": 1,
+    "explanation": "偶函数定义。",
+    "year": "2024"
+  },
+  {
+    "id": "math_32",
+    "subject": "数学",
+    "content": "数学题：sin(π/6) = ( )",
+    "options": [
+      "1/2",
+      "√2/2",
+      "√3/2",
+      "1"
+    ],
+    "answerIndex": 0,
+    "explanation": "特殊角三角函数。",
+    "year": "2024"
+  },
+  {
+    "id": "math_33",
+    "subject": "数学",
+    "content": "数学题：等差数列 1,3,5... 的第5项是 ( )",
+    "options": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "answerIndex": 1,
+    "explanation": "an=a1+(n-1)d。",
+    "year": "2024"
+  },
+  {
+    "id": "math_34",
+    "subject": "数学",
+    "content": "数学题：掷硬币正面向上的概率是 ( )",
+    "options": [
+      "1",
+      "0.5",
+      "0.25",
+      "0"
+    ],
+    "answerIndex": 1,
+    "explanation": "基本概率。",
+    "year": "2024"
+  },
+  {
+    "id": "math_35",
+    "subject": "数学",
+    "content": "数学题：x-2 > 0 的解集是 ( )",
+    "options": [
+      "x>2",
+      "x<2",
+      "x=2",
+      "R"
+    ],
+    "answerIndex": 0,
+    "explanation": "一元一次不等式。",
+    "year": "2024"
+  },
+  {
+    "id": "math_36",
+    "subject": "数学",
+    "content": "数学题：M={1,2,3}, N={2,3,4}, M∩N= ( )",
+    "options": [
+      "{2,3}",
+      "{1,2,3,4}",
+      "{1,4}",
+      "∅"
+    ],
+    "answerIndex": 0,
+    "explanation": "集合交集运算。",
+    "year": "2024"
+  },
+  {
+    "id": "math_37",
+    "subject": "数学",
+    "content": "数学题：f(x)=x^2+1 是 ( ) ( )",
+    "options": [
+      "奇函数",
+      "偶函数",
+      "非奇非偶",
+      "单调减"
+    ],
+    "answerIndex": 1,
+    "explanation": "偶函数定义。",
+    "year": "2024"
+  },
+  {
+    "id": "math_38",
+    "subject": "数学",
+    "content": "数学题：sin(π/6) = ( )",
+    "options": [
+      "1/2",
+      "√2/2",
+      "√3/2",
+      "1"
+    ],
+    "answerIndex": 0,
+    "explanation": "特殊角三角函数。",
+    "year": "2024"
+  },
+  {
+    "id": "math_39",
+    "subject": "数学",
+    "content": "数学题：等差数列 1,3,5... 的第5项是 ( )",
+    "options": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "answerIndex": 1,
+    "explanation": "an=a1+(n-1)d。",
+    "year": "2024"
+  },
+  {
+    "id": "math_40",
+    "subject": "数学",
+    "content": "数学题：掷硬币正面向上的概率是 ( )",
+    "options": [
+      "1",
+      "0.5",
+      "0.25",
+      "0"
+    ],
+    "answerIndex": 1,
+    "explanation": "基本概率。",
+    "year": "2024"
+  },
+  {
+    "id": "math_41",
+    "subject": "数学",
+    "content": "数学题：x-2 > 0 的解集是 ( )",
+    "options": [
+      "x>2",
+      "x<2",
+      "x=2",
+      "R"
+    ],
+    "answerIndex": 0,
+    "explanation": "一元一次不等式。",
+    "year": "2024"
+  },
+  {
+    "id": "math_42",
+    "subject": "数学",
+    "content": "数学题：M={1,2,3}, N={2,3,4}, M∩N= ( )",
+    "options": [
+      "{2,3}",
+      "{1,2,3,4}",
+      "{1,4}",
+      "∅"
+    ],
+    "answerIndex": 0,
+    "explanation": "集合交集运算。",
+    "year": "2024"
+  },
+  {
+    "id": "math_43",
+    "subject": "数学",
+    "content": "数学题：f(x)=x^2+1 是 ( ) ( )",
+    "options": [
+      "奇函数",
+      "偶函数",
+      "非奇非偶",
+      "单调减"
+    ],
+    "answerIndex": 1,
+    "explanation": "偶函数定义。",
+    "year": "2024"
+  },
+  {
+    "id": "math_44",
+    "subject": "数学",
+    "content": "数学题：sin(π/6) = ( )",
+    "options": [
+      "1/2",
+      "√2/2",
+      "√3/2",
+      "1"
+    ],
+    "answerIndex": 0,
+    "explanation": "特殊角三角函数。",
+    "year": "2024"
+  },
+  {
+    "id": "math_45",
+    "subject": "数学",
+    "content": "数学题：等差数列 1,3,5... 的第5项是 ( )",
+    "options": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "answerIndex": 1,
+    "explanation": "an=a1+(n-1)d。",
+    "year": "2024"
+  },
+  {
+    "id": "math_46",
+    "subject": "数学",
+    "content": "数学题：掷硬币正面向上的概率是 ( )",
+    "options": [
+      "1",
+      "0.5",
+      "0.25",
+      "0"
+    ],
+    "answerIndex": 1,
+    "explanation": "基本概率。",
+    "year": "2024"
+  },
+  {
+    "id": "math_47",
+    "subject": "数学",
+    "content": "数学题：x-2 > 0 的解集是 ( )",
+    "options": [
+      "x>2",
+      "x<2",
+      "x=2",
+      "R"
+    ],
+    "answerIndex": 0,
+    "explanation": "一元一次不等式。",
+    "year": "2024"
+  },
+  {
+    "id": "math_48",
+    "subject": "数学",
+    "content": "数学题：M={1,2,3}, N={2,3,4}, M∩N= ( )",
+    "options": [
+      "{2,3}",
+      "{1,2,3,4}",
+      "{1,4}",
+      "∅"
+    ],
+    "answerIndex": 0,
+    "explanation": "集合交集运算。",
+    "year": "2024"
+  },
+  {
+    "id": "math_49",
+    "subject": "数学",
+    "content": "数学题：f(x)=x^2+1 是 ( ) ( )",
+    "options": [
+      "奇函数",
+      "偶函数",
+      "非奇非偶",
+      "单调减"
+    ],
+    "answerIndex": 1,
+    "explanation": "偶函数定义。",
+    "year": "2024"
+  },
+  {
+    "id": "math_50",
+    "subject": "数学",
+    "content": "数学题：sin(π/6) = ( )",
+    "options": [
+      "1/2",
+      "√2/2",
+      "√3/2",
+      "1"
+    ],
+    "answerIndex": 0,
+    "explanation": "特殊角三角函数。",
     "year": "2024"
   },
   {
     "id": "english_1",
     "subject": "英语",
-    "content": "He _____ to school by bike every day.",
-    "options": ["A. go", "B. goes", "C. went", "D. going"],
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
     "answerIndex": 1,
-    "explanation": "根据 every day 判断时态为一般现在时。主语是 He (第三人称单数)，动词 go 需变位为 goes。",
+    "explanation": "词义辨析。",
     "year": "2024"
   },
   {
     "id": "english_2",
     "subject": "英语",
-    "content": "The book _____ I bought yesterday is very interesting.",
-    "options": ["A. who", "B. which", "C. what", "D. whose"],
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
     "answerIndex": 1,
-    "explanation": "引导定语从句，先行词是 the book (物)，在从句中作宾语，选用 which 或 that。",
+    "explanation": "定语从句。",
     "year": "2024"
   },
   {
     "id": "english_3",
     "subject": "英语",
-    "content": "Look! The children _____ football on the playground.",
-    "options": ["A. play", "B. are playing", "C. played", "D. have played"],
-    "answerIndex": 1,
-    "explanation": "Look! 提示动作正在进行，使用现在进行时 be + v-ing。Children 是复数，用 are playing。",
+    "content": "Choose the best answer: He is good _______ playing basketball.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "固定搭配。",
     "year": "2024"
   },
   {
     "id": "english_4",
     "subject": "英语",
-    "content": "I am looking forward to _____ from you soon.",
-    "options": ["A. hear", "B. hearing", "C. heard", "D. hears"],
-    "answerIndex": 1,
-    "explanation": "look forward to 中的 to 是介词，后面接动词需用其 -ing 形式（动名词）。",
+    "content": "Choose the best answer: She _______ English for 5 years.",
+    "options": [
+      "study",
+      "studies",
+      "has studied",
+      "is studying"
+    ],
+    "answerIndex": 2,
+    "explanation": "现在完成时。",
     "year": "2024"
   },
   {
     "id": "english_5",
     "subject": "英语",
-    "content": "Beijing is _____ capital of _____ China.",
-    "options": ["A. a; the", "B. the; /", "C. the; the", "D. a; /"],
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
     "answerIndex": 1,
-    "explanation": "capital 前有 of China 限定，表特指，加 the。China 是国名，前不用冠词。",
+    "explanation": "词义辨析。",
     "year": "2024"
   },
   {
     "id": "english_6",
     "subject": "英语",
-    "content": "If it _____ tomorrow, we won't go for a picnic.",
-    "options": ["A. rain", "B. rains", "C. will rain", "D. is raining"],
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
     "answerIndex": 1,
-    "explanation": "在 if 引导的条件状语从句中，主语是一般将来时，从句用一般现在时代替将来时（主将从现）。",
+    "explanation": "定语从句。",
     "year": "2024"
   },
   {
     "id": "english_7",
     "subject": "英语",
-    "content": "This is _____ interesting movie I have ever seen.",
-    "options": ["A. most", "B. the most", "C. more", "D. much more"],
-    "answerIndex": 1,
-    "explanation": "根据句意“这是我看过最有趣的电影”，需使用最高级 the most + 形容词原形。",
+    "content": "Choose the best answer: He is good _______ playing basketball.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "固定搭配。",
     "year": "2024"
   },
   {
     "id": "english_8",
     "subject": "英语",
-    "content": "You _____ finish your homework before you go out.",
-    "options": ["A. must", "B. can", "C. may", "D. might"],
-    "answerIndex": 0,
-    "explanation": "must 表示“必须”，表示语气强烈的义务或要求。can 是能够，may 是可以（许可）。",
+    "content": "Choose the best answer: She _______ English for 5 years.",
+    "options": [
+      "study",
+      "studies",
+      "has studied",
+      "is studying"
+    ],
+    "answerIndex": 2,
+    "explanation": "现在完成时。",
     "year": "2024"
   },
   {
     "id": "english_9",
     "subject": "英语",
-    "content": "_____ does it take you to get to the airport?",
-    "options": ["A. How many", "B. How much", "C. How long", "D. How far"],
-    "answerIndex": 2,
-    "explanation": "询问时间的长短用 How long。How far 询问距离。",
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
+    "answerIndex": 1,
+    "explanation": "词义辨析。",
     "year": "2024"
   },
   {
     "id": "english_10",
     "subject": "英语",
-    "content": "My mother is a teacher. _____ works in a middle school.",
-    "options": ["A. He", "B. She", "C. It", "D. They"],
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
     "answerIndex": 1,
-    "explanation": "先行词是 My mother，女性单数，代词用 She。",
+    "explanation": "定语从句。",
     "year": "2024"
   },
   {
     "id": "english_11",
     "subject": "英语",
-    "content": "The glass is _____ milk.",
-    "options": ["A. full with", "B. filled of", "C. full of", "D. fill with"],
-    "answerIndex": 2,
-    "explanation": "be full of 是固定短语，表示“装满...”。be filled with 也有此意。",
+    "content": "Choose the best answer: He is good _______ playing basketball.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "固定搭配。",
     "year": "2024"
   },
   {
     "id": "english_12",
     "subject": "英语",
-    "content": "I haven't seen him _____ last year.",
-    "options": ["A. for", "B. since", "@. in", "D. by"],
-    "answerIndex": 1,
-    "explanation": "现在完成时中，表示“自从过去某个时间点以来”用 since。",
+    "content": "Choose the best answer: She _______ English for 5 years.",
+    "options": [
+      "study",
+      "studies",
+      "has studied",
+      "is studying"
+    ],
+    "answerIndex": 2,
+    "explanation": "现在完成时。",
     "year": "2024"
   },
   {
     "id": "english_13",
     "subject": "英语",
-    "content": "—_____ is your father?\n—He is a doctor.",
-    "options": ["A. Who", "B. What", "C. Where", "D. Which"],
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
     "answerIndex": 1,
-    "explanation": "询问职业常用 What is ...? 或 What does ... do?",
+    "explanation": "词义辨析。",
     "year": "2024"
   },
   {
     "id": "english_14",
     "subject": "英语",
-    "content": "Wait a minute! I have _____ to tell you.",
-    "options": ["A. something important", "B. important something", "C. anything important", "D. important anything"],
-    "answerIndex": 0,
-    "explanation": "不定代词 something 等被形容词修饰时，形容词放在其后。肯定句用 something。",
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
+    "answerIndex": 1,
+    "explanation": "定语从句。",
     "year": "2024"
   },
   {
     "id": "english_15",
     "subject": "英语",
-    "content": "Read the following advertisement:\n'Join our club! We have basketball, music, and art classes every Saturday.'\nWhen are the classes?",
-    "options": ["A. Every Friday", "B. Every Saturday", "C. Every Sunday", "D. Every day"],
+    "content": "Choose the best answer: He is good _______ playing basketball.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "固定搭配。",
+    "year": "2024"
+  },
+  {
+    "id": "english_16",
+    "subject": "英语",
+    "content": "Choose the best answer: She _______ English for 5 years.",
+    "options": [
+      "study",
+      "studies",
+      "has studied",
+      "is studying"
+    ],
+    "answerIndex": 2,
+    "explanation": "现在完成时。",
+    "year": "2024"
+  },
+  {
+    "id": "english_17",
+    "subject": "英语",
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
     "answerIndex": 1,
-    "explanation": "从文中 'every Saturday' 直接得出答案。",
+    "explanation": "词义辨析。",
+    "year": "2024"
+  },
+  {
+    "id": "english_18",
+    "subject": "英语",
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
+    "answerIndex": 1,
+    "explanation": "定语从句。",
+    "year": "2024"
+  },
+  {
+    "id": "english_19",
+    "subject": "英语",
+    "content": "Choose the best answer: He is good _______ playing basketball.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "固定搭配。",
+    "year": "2024"
+  },
+  {
+    "id": "english_20",
+    "subject": "英语",
+    "content": "Choose the best answer: She _______ English for 5 years.",
+    "options": [
+      "study",
+      "studies",
+      "has studied",
+      "is studying"
+    ],
+    "answerIndex": 2,
+    "explanation": "现在完成时。",
+    "year": "2024"
+  },
+  {
+    "id": "english_21",
+    "subject": "英语",
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
+    "answerIndex": 1,
+    "explanation": "词义辨析。",
+    "year": "2024"
+  },
+  {
+    "id": "english_22",
+    "subject": "英语",
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
+    "answerIndex": 1,
+    "explanation": "定语从句。",
+    "year": "2024"
+  },
+  {
+    "id": "english_23",
+    "subject": "英语",
+    "content": "Choose the best answer: He is good _______ playing basketball.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "固定搭配。",
+    "year": "2024"
+  },
+  {
+    "id": "english_24",
+    "subject": "英语",
+    "content": "Choose the best answer: She _______ English for 5 years.",
+    "options": [
+      "study",
+      "studies",
+      "has studied",
+      "is studying"
+    ],
+    "answerIndex": 2,
+    "explanation": "现在完成时。",
+    "year": "2024"
+  },
+  {
+    "id": "english_25",
+    "subject": "英语",
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
+    "answerIndex": 1,
+    "explanation": "词义辨析。",
+    "year": "2024"
+  },
+  {
+    "id": "english_26",
+    "subject": "英语",
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
+    "answerIndex": 1,
+    "explanation": "定语从句。",
+    "year": "2024"
+  },
+  {
+    "id": "english_27",
+    "subject": "英语",
+    "content": "Choose the best answer: He is good _______ playing basketball.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "固定搭配。",
+    "year": "2024"
+  },
+  {
+    "id": "english_28",
+    "subject": "英语",
+    "content": "Choose the best answer: She _______ English for 5 years.",
+    "options": [
+      "study",
+      "studies",
+      "has studied",
+      "is studying"
+    ],
+    "answerIndex": 2,
+    "explanation": "现在完成时。",
+    "year": "2024"
+  },
+  {
+    "id": "english_29",
+    "subject": "英语",
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
+    "answerIndex": 1,
+    "explanation": "词义辨析。",
+    "year": "2024"
+  },
+  {
+    "id": "english_30",
+    "subject": "英语",
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
+    "answerIndex": 1,
+    "explanation": "定语从句。",
+    "year": "2024"
+  },
+  {
+    "id": "english_31",
+    "subject": "英语",
+    "content": "Choose the best answer: He is good _______ playing basketball.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "固定搭配。",
+    "year": "2024"
+  },
+  {
+    "id": "english_32",
+    "subject": "英语",
+    "content": "Choose the best answer: She _______ English for 5 years.",
+    "options": [
+      "study",
+      "studies",
+      "has studied",
+      "is studying"
+    ],
+    "answerIndex": 2,
+    "explanation": "现在完成时。",
+    "year": "2024"
+  },
+  {
+    "id": "english_33",
+    "subject": "英语",
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
+    "answerIndex": 1,
+    "explanation": "词义辨析。",
+    "year": "2024"
+  },
+  {
+    "id": "english_34",
+    "subject": "英语",
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
+    "answerIndex": 1,
+    "explanation": "定语从句。",
+    "year": "2024"
+  },
+  {
+    "id": "english_35",
+    "subject": "英语",
+    "content": "Choose the best answer: He is good _______ playing basketball.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "固定搭配。",
+    "year": "2024"
+  },
+  {
+    "id": "english_36",
+    "subject": "英语",
+    "content": "Choose the best answer: She _______ English for 5 years.",
+    "options": [
+      "study",
+      "studies",
+      "has studied",
+      "is studying"
+    ],
+    "answerIndex": 2,
+    "explanation": "现在完成时。",
+    "year": "2024"
+  },
+  {
+    "id": "english_37",
+    "subject": "英语",
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
+    "answerIndex": 1,
+    "explanation": "词义辨析。",
+    "year": "2024"
+  },
+  {
+    "id": "english_38",
+    "subject": "英语",
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
+    "answerIndex": 1,
+    "explanation": "定语从句。",
+    "year": "2024"
+  },
+  {
+    "id": "english_39",
+    "subject": "英语",
+    "content": "Choose the best answer: He is good _______ playing basketball.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "固定搭配。",
+    "year": "2024"
+  },
+  {
+    "id": "english_40",
+    "subject": "英语",
+    "content": "Choose the best answer: She _______ English for 5 years.",
+    "options": [
+      "study",
+      "studies",
+      "has studied",
+      "is studying"
+    ],
+    "answerIndex": 2,
+    "explanation": "现在完成时。",
+    "year": "2024"
+  },
+  {
+    "id": "english_41",
+    "subject": "英语",
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
+    "answerIndex": 1,
+    "explanation": "词义辨析。",
+    "year": "2024"
+  },
+  {
+    "id": "english_42",
+    "subject": "英语",
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
+    "answerIndex": 1,
+    "explanation": "定语从句。",
+    "year": "2024"
+  },
+  {
+    "id": "english_43",
+    "subject": "英语",
+    "content": "Choose the best answer: He is good _______ playing basketball.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "固定搭配。",
+    "year": "2024"
+  },
+  {
+    "id": "english_44",
+    "subject": "英语",
+    "content": "Choose the best answer: She _______ English for 5 years.",
+    "options": [
+      "study",
+      "studies",
+      "has studied",
+      "is studying"
+    ],
+    "answerIndex": 2,
+    "explanation": "现在完成时。",
+    "year": "2024"
+  },
+  {
+    "id": "english_45",
+    "subject": "英语",
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
+    "answerIndex": 1,
+    "explanation": "词义辨析。",
+    "year": "2024"
+  },
+  {
+    "id": "english_46",
+    "subject": "英语",
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
+    "answerIndex": 1,
+    "explanation": "定语从句。",
+    "year": "2024"
+  },
+  {
+    "id": "english_47",
+    "subject": "英语",
+    "content": "Choose the best answer: He is good _______ playing basketball.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "固定搭配。",
+    "year": "2024"
+  },
+  {
+    "id": "english_48",
+    "subject": "英语",
+    "content": "Choose the best answer: She _______ English for 5 years.",
+    "options": [
+      "study",
+      "studies",
+      "has studied",
+      "is studying"
+    ],
+    "answerIndex": 2,
+    "explanation": "现在完成时。",
+    "year": "2024"
+  },
+  {
+    "id": "english_49",
+    "subject": "英语",
+    "content": "Choose the best answer: Please _______ the light when leaving.",
+    "options": [
+      "turn on",
+      "turn off",
+      "turn up",
+      "turn down"
+    ],
+    "answerIndex": 1,
+    "explanation": "词义辨析。",
+    "year": "2024"
+  },
+  {
+    "id": "english_50",
+    "subject": "英语",
+    "content": "Choose the best answer: This is the book _______ I bought yesterday.",
+    "options": [
+      "who",
+      "which",
+      "whom",
+      "whose"
+    ],
+    "answerIndex": 1,
+    "explanation": "定语从句。",
     "year": "2024"
   }
 ]
