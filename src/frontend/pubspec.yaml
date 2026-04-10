@@ -1,5 +1,5 @@
-name: vocational_bridge
-description: "A new Flutter project."
+name: flutter_app
+description: "粤职通 - 广东3+证书高职高考备考助手"
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -9,12 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  http: ^1.2.2
   cupertino_icons: ^1.0.8
-  image_picker: ^1.1.2 # 支持拍照搜题
-  percent_indicator: ^4.2.3 # 支持提分进度可视化
-  sqflite: ^2.3.3+1 # 新增：本地数据库支持 (Task #95)
-  path: ^1.9.0 # 新增：数据库路径支持
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.10+1
+  provider: ^6.1.2
+  http: ^1.2.2
 
 dev_dependencies:
   flutter_test:
@@ -23,3 +22,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/data/questions.json
+    - assets/data/schools.json
