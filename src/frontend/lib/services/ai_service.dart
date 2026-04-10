@@ -1,57 +1,77 @@
 import 'dart:async';
+import 'data_loader.dart';
+import '../models/app_models.dart';
 
 class AIService {
   static Future<String> getExplanation(String query) async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(milliseconds: 800));
 
+    try {
+      final questions = await DataLoader.loadQuestions();
+      
+      // 简单的关键词匹配逻辑
+      Question? bestMatch;
+      int maxOverlap = 0;
+      
+      final queryLower = query.toLowerCase();
+      
+      for (var q in questions) {
+        int overlap = 0;
+        if (q.content.toLowerCase().contains(queryLower)) {
+          overlap += 10; // 强匹配
+        }
+        
+        // 检查学科匹配
+        if (queryLower.contains(q.subject.toLowerCase())) {
+          overlap += 5;
+        }
+        
+        // 简单的关键词拆分匹配
+        final keywords = queryLower.split(RegExp(r'[\s，。？！、]')).where((e) => e.length > 1);
+        for (var kw in keywords) {
+          if (q.content.toLowerCase().contains(kw)) {
+            overlap += 2;
+          }
+        }
+        
+        if (overlap > maxOverlap) {
+          maxOverlap = overlap;
+          bestMatch = q;
+        }
+      }
+
+      if (bestMatch != null && maxOverlap > 5) {
+        final answerLabel = String.fromCharCode(65 + bestMatch.answerIndex);
+        return '''【为您找到相关题目】
+${bestMatch.content}
+${bestMatch.options.asMap().entries.map((e) => '${String.fromCharCode(65 + e.key)}. ${e.value}').join('\n')}
+
+【正确答案】
+$answerLabel. ${bestMatch.options[bestMatch.answerIndex]}
+
+【详细解析】
+${bestMatch.explanation}
+
+【相关知识点提示】
+本题属于 ${bestMatch.subject} 核心考点。建议查阅“粤职通”学习板块中的相关专题进行深度复习。''';
+      }
+    } catch (e) {
+      print('AI Service Error: $e');
+    }
+
+    // 通用回复逻辑
     if (query.contains('数学') || query.contains('函数') || query.contains('三角')) {
-      return '''三角函数核心考点解析
-
-对于 3+证书数学，三角函数求值通常遵循以下步骤：
-
-1. 诱导公式：先将大角化小角，如 sin(180° - α) = sin α
-2. 符号判断：根据象限判断正负（一全正、二正弦、三切、四余弦）
-3. 特殊角：熟记 30°、45°、60° 的三角函数值
-
-示例题解：
-求 sin 150° 的值。
-解：sin 150° = sin(180° - 30°) = sin 30° = 1/2
-''';
+      return '关于数学三角函数，建议重点掌握：\n1. 诱导公式：奇变偶不变，符号看象限\n2. 特殊角取值：30°/45°/60° 的 sin/cos/tan\n3. 正余弦定理的实际应用。';
+    }
+    
+    if (query.contains('英语') || query.contains('语法')) {
+      return '英语语法复习建议：\n1. 词类：介词搭配、动词时态（现在完成时是重点）\n2. 句法：从句引导词、非谓语动词\n3. 多做往年真题中的语法填空。';
     }
 
-    if (query.contains('英语') || query.contains('语法') || query.contains('English')) {
-      return '''英语语法高频考点
-
-3+证书英语常考语法点：
-
-1. 时态辨析：一般过去时 vs 现在完成时
-   - I have lived here for 5 years. (强调持续)
-   - I lived there in 2020. (强调过去某时间点)
-
-2. 定语从句：who/which/that 的选用
-   - 先行词是人用 who/that
-   - 先行词是物用 which/that
-
-3. 固定搭配：look forward to doing, be used to doing
-''';
+    if (query.contains('语文') || query.contains('字音')) {
+      return '语文备考锦囊：\n1. 字音：整理常考易错多音字\n2. 成语：区分贬义词与褒义词的误用\n3. 作文：积累关于职教、强国主题的素材。';
     }
 
-    if (query.contains('语文') || query.contains('成语') || query.contains('古诗')) {
-      return '''语文选择题高频考点
-
-1. 字音辨析：注意多音字和易错读音
-   - 休憩(qì) 狡黠(xiá) 渲染(xuàn)
-
-2. 成语辨析：注意褒贬色彩和使用对象
-   - "巧夺天工"只能形容人工制品，不能形容自然景观
-   - "首当其冲"是最先受到攻击，不是"首先"的意思
-
-3. 病句辨析：常见类型
-   - 两面对一面（"能否...取决于..."）
-   - 成分残缺（缺主语或宾语）
-''';
-    }
-
-    return '你好！我是你的粤职通 AI 助教。你可以问我关于 3+证书 的任何考点，比如"数学三角函数怎么求"、"英语语法考什么"、"语文成语辨析"等。';
+    return '你好！我是你的粤职通 AI 助教。我已经在题库中为你准备了丰富的学习资源。\n\n你可以尝试输入关键词：\n• "三角函数"\n• "语法填空"\n• "字音辨析"\n\n或者直接粘贴你想解析的题目给我！';
   }
 }

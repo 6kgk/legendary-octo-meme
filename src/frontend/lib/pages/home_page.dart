@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'ai_tutor_page.dart';
+import 'daily_practice_page.dart';
+import 'wrong_answers_page.dart';
 import '../services/study_provider.dart';
 import '../theme.dart';
 
@@ -36,8 +38,10 @@ class _HomePageState extends State<HomePage> {
             const Text('准备好今天的挑战了吗？',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600, color: AppColors.mainText)),
             const SizedBox(height: 48),
-            _buildNavTile(context, '每日一练', '基于 3+证书 最新考纲', Icons.auto_awesome_outlined),
-            _buildNavTile(context, '错题回顾', '温故而知新，可以为师矣', Icons.history_edu_outlined),
+            _buildNavTile(context, '每日一练', '基于 3+证书 最新考纲', Icons.auto_awesome_outlined,
+                const DailyPracticePage()),
+            _buildNavTile(context, '错题回顾', '温故而知新，可以为师矣', Icons.history_edu_outlined,
+                const WrongAnswersPage()),
             _buildNavTile(context, 'AI 助教', '基于推理逻辑的考点解析', Icons.psychology_outlined,
                 const AITutorPage()),
             const SizedBox(height: 48),

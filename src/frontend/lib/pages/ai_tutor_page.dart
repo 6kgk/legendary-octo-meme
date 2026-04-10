@@ -11,6 +11,7 @@ class AITutorPage extends StatefulWidget {
 
 class _AITutorPageState extends State<AITutorPage> {
   final TextEditingController _controller = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
   final List<Map<String, String>> _messages = [
     {
       "role": "ai",
@@ -19,21 +20,41 @@ class _AITutorPageState extends State<AITutorPage> {
   ];
   bool _isLoading = false;
 
-  void _handleSendMessage() async {
-    final text = _controller.text.trim();
+  void _handleSendMessage({String? overrideText}) async {
+    final text = overrideText ?? _controller.text.trim();
     if (text.isEmpty) return;
+
+    if (overrideText == null) {
+      _controller.clear();
+    }
 
     setState(() {
       _messages.add({"role": "user", "content": text});
-      _controller.clear();
       _isLoading = true;
     });
 
+    _scrollToBottom();
+
     final response = await AIService.getExplanation(text);
 
-    setState(() {
-      _messages.add({"role": "ai", "content": response});
-      _isLoading = false;
+    if (mounted) {
+      setState(() {
+        _messages.add({"role": "ai", "content": response});
+        _isLoading = false;
+      });
+      _scrollToBottom();
+    }
+  }
+
+  void _scrollToBottom() {
+    Future.delayed(const Duration(milliseconds: 100), () {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+        );
+      }
     });
   }
 
@@ -47,6 +68,7 @@ class _AITutorPageState extends State<AITutorPage> {
         children: [
           Expanded(
             child: ListView.builder(
+              controller: _scrollController,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
               itemCount: _messages.length,
               itemBuilder: (context, index) {
@@ -63,8 +85,34 @@ class _AITutorPageState extends State<AITutorPage> {
                 style: TextStyle(fontSize: 12, color: AppColors.subText),
               ),
             ),
+          _buildQuickActions(),
           _buildInputBar(),
         ],
+      ),
+    );
+  }
+
+  Widget _buildQuickActions() {
+    final actions = ['语文字音辨析', '数学三角函数', '英语语法填空'];
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      height: 50,
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        itemCount: actions.length,
+        separatorBuilder: (_, __) => const SizedBox(width: 8),
+        itemBuilder: (context, index) {
+          return ActionChip(
+            label: Text(
+              actions[index],
+              style: const TextStyle(fontSize: 12, color: AppColors.mainText),
+            ),
+            backgroundColor: AppColors.areaBg,
+            side: BorderSide.none,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            onPressed: () => _handleSendMessage(overrideText: actions[index]),
+          );
+        },
       ),
     );
   }
