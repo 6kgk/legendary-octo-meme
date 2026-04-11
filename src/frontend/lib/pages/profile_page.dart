@@ -3,6 +3,8 @@ import '../theme.dart';
 import 'favorites_page.dart';
 import 'wrong_answers_page.dart';
 import 'study_stats_page.dart';
+import 'feedback_page.dart';
+import 'about_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -54,9 +56,11 @@ class ProfilePage extends StatelessWidget {
               _buildMenuItem(context, Icons.replay_rounded, '错题本', AppColors.accent,
                   () => Navigator.push(context, MaterialPageRoute(builder: (_) => const WrongAnswersPage()))),
               const SizedBox(height: 12),
-              _buildMenuItem(context, Icons.help_outline_rounded, '帮助与反馈', AppColors.secondary, () {}),
+              _buildMenuItem(context, Icons.help_outline_rounded, '帮助与反馈', AppColors.secondary,
+                  () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FeedbackPage()))),
               const SizedBox(height: 12),
-              _buildMenuItem(context, Icons.info_outline_rounded, '关于粤职通', AppColors.subText, () {}),
+              _buildMenuItem(context, Icons.info_outline_rounded, '关于粤职通', AppColors.subText,
+                  () => Navigator.push(context, MaterialPageRoute(builder: (_) => const AboutPage()))),
             ],
           ),
         ),

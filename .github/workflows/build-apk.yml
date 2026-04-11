@@ -3,8 +3,6 @@ name: Build APK
 on:
   push:
     branches: [main, master]
-  schedule:
-    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -98,26 +96,11 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v2.0.${{ github.run_number }}
-          name: "粤职通 v2.0 Build #${{ github.run_number }}"
+          tag_name: v2.1.${{ github.run_number }}
+          name: "YueZhiTong v2.1 Build #${{ github.run_number }}"
           files: |
             artifacts/yuezhitong-app.apk
             artifacts/yuezhitong-admin.apk
-          body: |
-            ## 粤职通 v2.0
-            
-            ### 主应用 (yuezhitong-app.apk)
-            - 全新 UI 设计（渐变色 + 卡片式布局）
-            - DeepSeek AI 助教（真实大模型驱动）
-            - 150 道真题（语文/数学/英语各 50 题）
-            - 30 所广东高职院校数据
-            - 每日一练 + 错题本 + 收藏夹 + 学习统计
-            
-            ### 管理后台 (yuezhitong-admin.apk)
-            - 仪表盘（数据概览）
-            - 题库管理（增删改查 + 筛选）
-            - 院校管理
-            - 内容审核（帖子审核/删除）
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
