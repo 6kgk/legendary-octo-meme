@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
-import 'package:flutter/services.dart' show rootBundle;
 import '../theme.dart';
 
 class QuestionsManagePage extends StatefulWidget {
@@ -13,9 +11,6 @@ class QuestionsManagePage extends StatefulWidget {
 class _QuestionsManagePageState extends State<QuestionsManagePage> {
   String _selectedSubject = '全部';
   final List<Map<String, dynamic>> _questions = [];
-  bool _isLoaded = false;
-
-  // Demo data since admin app doesn't share assets with frontend
   @override
   void initState() {
     super.initState();
@@ -33,7 +28,7 @@ class _QuestionsManagePageState extends State<QuestionsManagePage> {
         'status': i % 5 == 0 ? '待审核' : '已发布',
       });
     }
-    setState(() => _isLoaded = true);
+    setState(() {});
   }
 
   List<Map<String, dynamic>> get _filteredQuestions {
