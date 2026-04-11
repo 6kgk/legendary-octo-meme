@@ -75,7 +75,7 @@ class _QuizViewState extends State<QuizView> {
         actions: [
           IconButton(
             icon: Icon(_isFavorite ? Icons.bookmark : Icons.bookmark_border, 
-                color: _isFavorite ? AppColors.primaryYellow : AppColors.mainText),
+                color: _isFavorite ? AppColors.warning : AppColors.mainText),
             onPressed: () => _toggleFavorite(question.id),
           ),
           Padding(

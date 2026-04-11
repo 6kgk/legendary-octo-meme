@@ -83,7 +83,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                           style: const TextStyle(color: AppColors.subText, fontSize: 12),
                         ),
                       ),
-                      trailing: const Icon(Icons.bookmark, color: AppColors.primaryYellow),
+                      trailing: const Icon(Icons.bookmark, color: AppColors.warning),
                       onTap: () => _showQuestionDetail(question),
                       onLongPress: () => _confirmRemove(question),
                     );

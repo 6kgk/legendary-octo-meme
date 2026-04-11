@@ -15,9 +15,7 @@ class _SchoolSearchPageState extends State<SchoolSearchPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() {
-      Provider.of<SchoolProvider>(context, listen: false).loadData();
-    });
+    Future.microtask(() => Provider.of<SchoolProvider>(context, listen: false).loadData());
   }
 
   @override
@@ -25,90 +23,93 @@ class _SchoolSearchPageState extends State<SchoolSearchPage> {
     final provider = Provider.of<SchoolProvider>(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('查校')),
-      body: !provider.isLoaded
-          ? const Center(child: CircularProgressIndicator())
+      body: SafeArea(
+        child: !provider.isLoaded
+          ? const Center(child: CircularProgressIndicator(color: AppColors.primary))
           : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: TextField(
-                    onChanged: (val) => provider.updateSearch(val),
-                    decoration: InputDecoration(
-                      hintText: '搜索院校、专业或地区...',
-                      prefixIcon: const Icon(Icons.search, size: 20, color: AppColors.mainText),
-                      filled: true,
-                      fillColor: AppColors.areaBg,
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
-                      contentPadding: const EdgeInsets.symmetric(vertical: 0),
-                    ),
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  child: Row(
-                    children: ['全部', '公办', '民办']
-                        .map((type) => _buildFilterChip(type, provider))
-                        .toList(),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(24, 16, 24, 0),
-                  child: Row(
+                  padding: const EdgeInsets.fromLTRB(24, 24, 24, 0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      const Text('查校', style: TextStyle(
+                        fontSize: 28, fontWeight: FontWeight.w800, color: AppColors.mainText)),
+                      const SizedBox(height: 4),
+                      const Text('广东高职院校信息大全', style: TextStyle(
+                        fontSize: 14, color: AppColors.subText)),
+                      const SizedBox(height: 20),
+                      TextField(
+                        onChanged: (val) => provider.updateSearch(val),
+                        decoration: InputDecoration(
+                          hintText: '搜索院校、专业或地区...',
+                          prefixIcon: const Icon(Icons.search_rounded, size: 22, color: AppColors.subText),
+                          filled: true,
+                          fillColor: AppColors.areaBg,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Row(
+                        children: ['全部', '公办', '民办'].map((type) {
+                          final isSelected = provider.selectedType == type;
+                          return Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: GestureDetector(
+                              onTap: () => provider.updateFilter(type),
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 200),
+                                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                                decoration: BoxDecoration(
+                                  gradient: isSelected ? AppColors.primaryGradient : null,
+                                  color: isSelected ? null : AppColors.cardBg,
+                                  borderRadius: BorderRadius.circular(24),
+                                  border: isSelected ? null : Border.all(color: AppColors.divider),
+                                ),
+                                child: Text(type, style: TextStyle(
+                                  fontSize: 13, fontWeight: FontWeight.w600,
+                                  color: isSelected ? Colors.white : AppColors.mainText)),
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                      const SizedBox(height: 12),
                       Text('${provider.filteredSchools.length} 所院校',
-                          style: const TextStyle(fontSize: 13, color: AppColors.subText)),
-                      const Spacer(),
-                      const Text('按分数排序',
-                          style: TextStyle(fontSize: 12, color: AppColors.weakText)),
+                        style: const TextStyle(fontSize: 13, color: AppColors.subText)),
                     ],
                   ),
                 ),
                 const SizedBox(height: 8),
                 Expanded(
                   child: provider.filteredSchools.isEmpty
-                      ? const Center(child: Text('未找到符合条件的院校'))
-                      : ListView.builder(
-                          padding: const EdgeInsets.symmetric(horizontal: 24),
-                          itemCount: provider.filteredSchools.length,
-                          itemBuilder: (context, index) {
-                            return _buildSchoolTile(context, provider.filteredSchools[index]);
-                          },
-                        ),
+                    ? const Center(child: Text('未找到符合条件的院校'))
+                    : ListView.separated(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        itemCount: provider.filteredSchools.length,
+                        separatorBuilder: (_, __) => const SizedBox(height: 12),
+                        itemBuilder: (_, i) => _buildSchoolCard(context, provider.filteredSchools[i]),
+                      ),
                 ),
               ],
             ),
-    );
-  }
-
-  Widget _buildFilterChip(String label, SchoolProvider provider) {
-    final isSelected = provider.selectedType == label;
-    return GestureDetector(
-      onTap: () => provider.updateFilter(label),
-      child: Container(
-        margin: const EdgeInsets.only(right: 12),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-        decoration: BoxDecoration(
-          color: isSelected ? AppColors.mainText : AppColors.background,
-          borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: isSelected ? AppColors.mainText : AppColors.divider, width: 0.5),
-        ),
-        child: Text(label,
-            style: TextStyle(
-                fontSize: 13, color: isSelected ? AppColors.background : AppColors.mainText)),
       ),
     );
   }
 
-  Widget _buildSchoolTile(BuildContext context, School school) {
+  Widget _buildSchoolCard(BuildContext context, School school) {
     return GestureDetector(
       onTap: () => _showSchoolDetail(context, school),
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 20),
-        decoration: const BoxDecoration(
-          border: Border(bottom: BorderSide(color: AppColors.divider, width: 0.5)),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: AppColors.cardBg,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: AppColors.divider),
         ),
         child: Row(
           children: [
@@ -116,31 +117,45 @@ class _SchoolSearchPageState extends State<SchoolSearchPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(school.name,
-                      style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.w600, color: AppColors.mainText)),
-                  const SizedBox(height: 8),
+                  Text(school.name, style: const TextStyle(
+                    fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.mainText)),
+                  const SizedBox(height: 6),
                   Row(children: [
+                    Icon(Icons.location_on_outlined, size: 14, color: AppColors.subText),
+                    const SizedBox(width: 4),
                     Text(school.location, style: const TextStyle(fontSize: 13, color: AppColors.subText)),
-                    const SizedBox(width: 8),
-                    const Text('·', style: TextStyle(color: AppColors.weakText)),
-                    const SizedBox(width: 8),
-                    Text(school.type, style: const TextStyle(fontSize: 13, color: AppColors.subText)),
+                    const SizedBox(width: 12),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: school.type == '公办' ? AppColors.secondaryLight : AppColors.primaryLight,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Text(school.type, style: TextStyle(
+                        fontSize: 11, fontWeight: FontWeight.w600,
+                        color: school.type == '公办' ? AppColors.secondary : AppColors.primary)),
+                    ),
                   ]),
                   const SizedBox(height: 10),
                   Wrap(
-                    spacing: 6,
-                    children: school.majorCategories.map((m) => _buildMiniTag(m)).toList(),
+                    spacing: 6, runSpacing: 4,
+                    children: school.majorCategories.take(3).map((m) => Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                      decoration: BoxDecoration(
+                        color: AppColors.areaBg,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Text(m, style: const TextStyle(fontSize: 11, color: AppColors.subText)),
+                    )).toList(),
                   ),
                 ],
               ),
             ),
+            const SizedBox(width: 12),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text('${school.score}',
-                    style: const TextStyle(
-                        fontSize: 22, fontWeight: FontWeight.w600, color: AppColors.mainText)),
+                Text('${school.score}', style: const TextStyle(
+                  fontSize: 24, fontWeight: FontWeight.w800, color: AppColors.primary)),
                 const Text('投档线', style: TextStyle(fontSize: 10, color: AppColors.subText)),
               ],
             ),
@@ -154,51 +169,66 @@ class _SchoolSearchPageState extends State<SchoolSearchPage> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: AppColors.background,
+      backgroundColor: AppColors.cardBg,
       shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
-      builder: (context) => DraggableScrollableSheet(
-        initialChildSize: 0.6,
-        maxChildSize: 0.9,
-        minChildSize: 0.4,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
+      builder: (_) => DraggableScrollableSheet(
+        initialChildSize: 0.65, maxChildSize: 0.9, minChildSize: 0.4,
         expand: false,
-        builder: (context, scrollController) => SingleChildScrollView(
-          controller: scrollController,
+        builder: (_, sc) => SingleChildScrollView(
+          controller: sc,
           padding: const EdgeInsets.all(24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: Container(
-                    width: 40, height: 4,
-                    decoration: BoxDecoration(
-                        color: AppColors.divider, borderRadius: BorderRadius.circular(2))),
-              ),
+              Center(child: Container(
+                width: 40, height: 4,
+                decoration: BoxDecoration(
+                  color: AppColors.divider, borderRadius: BorderRadius.circular(2)),
+              )),
               const SizedBox(height: 24),
-              Text(school.name,
-                  style: const TextStyle(
-                      fontSize: 22, fontWeight: FontWeight.w600, color: AppColors.mainText)),
+              Text(school.name, style: const TextStyle(
+                fontSize: 24, fontWeight: FontWeight.w800, color: AppColors.mainText)),
               const SizedBox(height: 8),
-              Text('${school.location} · ${school.type}',
+              Row(children: [
+                Icon(Icons.location_on_outlined, size: 16, color: AppColors.subText),
+                const SizedBox(width: 4),
+                Text('${school.location} · ${school.type}',
                   style: const TextStyle(fontSize: 14, color: AppColors.subText)),
+              ]),
               const SizedBox(height: 24),
-              _buildInfoRow('投档线', '${school.score} 分'),
-              _buildInfoRow('官网', school.website),
+              Row(children: [
+                _buildDetailStat('投档线', '${school.score}分', AppColors.primary),
+                const SizedBox(width: 12),
+                _buildDetailStat('类型', school.type, AppColors.secondary),
+              ]),
               const SizedBox(height: 24),
-              const Text('院校简介',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: AppColors.mainText)),
+              const Text('院校简介', style: TextStyle(
+                fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.mainText)),
               const SizedBox(height: 8),
-              Text(school.description,
-                  style: const TextStyle(fontSize: 15, height: 1.6, color: AppColors.mainText)),
+              Text(school.description, style: const TextStyle(
+                fontSize: 15, height: 1.6, color: AppColors.mainText)),
               const SizedBox(height: 24),
-              const Text('开设专业',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: AppColors.mainText)),
+              const Text('开设专业', style: TextStyle(
+                fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.mainText)),
               const SizedBox(height: 12),
               Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: school.majorCategories.map((m) => _buildMiniTag(m)).toList(),
+                spacing: 8, runSpacing: 8,
+                children: school.majorCategories.map((m) => Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                  decoration: BoxDecoration(
+                    color: AppColors.areaBg, borderRadius: BorderRadius.circular(10)),
+                  child: Text(m, style: const TextStyle(fontSize: 13, color: AppColors.mainText)),
+                )).toList(),
               ),
+              if (school.website.isNotEmpty) ...[
+                const SizedBox(height: 24),
+                const Text('官方网站', style: TextStyle(
+                  fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.mainText)),
+                const SizedBox(height: 8),
+                Text(school.website, style: const TextStyle(
+                  fontSize: 14, color: AppColors.primary)),
+              ],
             ],
           ),
         ),
@@ -206,23 +236,23 @@ class _SchoolSearchPageState extends State<SchoolSearchPage> {
     );
   }
 
-  Widget _buildInfoRow(String label, String value) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: Row(
-        children: [
-          SizedBox(width: 60, child: Text(label, style: const TextStyle(fontSize: 13, color: AppColors.subText))),
-          Expanded(child: Text(value, style: const TextStyle(fontSize: 14, color: AppColors.mainText))),
-        ],
+  Widget _buildDetailStat(String label, String value, Color color) {
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: color.withOpacity(0.08),
+          borderRadius: BorderRadius.circular(14),
+        ),
+        child: Column(
+          children: [
+            Text(value, style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.w800, color: color)),
+            const SizedBox(height: 4),
+            Text(label, style: const TextStyle(fontSize: 12, color: AppColors.subText)),
+          ],
+        ),
       ),
-    );
-  }
-
-  Widget _buildMiniTag(String label) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(color: AppColors.areaBg, borderRadius: BorderRadius.circular(4)),
-      child: Text(label, style: const TextStyle(fontSize: 11, color: AppColors.subText)),
     );
   }
 }

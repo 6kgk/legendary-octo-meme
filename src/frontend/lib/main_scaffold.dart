@@ -16,43 +16,74 @@ class MainScaffold extends StatefulWidget {
 class _MainScaffoldState extends State<MainScaffold> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [
-    const HomePage(),
-    const QuestionBankPage(),
-    const SchoolSearchPage(),
-    const ForumPage(),
-    const ProfilePage(),
+  final List<Widget> _pages = const [
+    HomePage(),
+    QuestionBankPage(),
+    SchoolSearchPage(),
+    ForumPage(),
+    ProfilePage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _currentIndex,
-        children: _pages,
-      ),
+      body: IndexedStack(index: _currentIndex, children: _pages),
       bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          border: Border(
-            top: BorderSide(color: AppColors.divider, width: 0.5),
+        decoration: BoxDecoration(
+          color: AppColors.cardBg,
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.mainText.withOpacity(0.04),
+              blurRadius: 20,
+              offset: const Offset(0, -4),
+            ),
+          ],
+        ),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _buildNavItem(0, Icons.home_rounded, Icons.home_outlined, '首页'),
+                _buildNavItem(1, Icons.menu_book_rounded, Icons.menu_book_outlined, '刷题'),
+                _buildNavItem(2, Icons.school_rounded, Icons.school_outlined, '查校'),
+                _buildNavItem(3, Icons.chat_bubble_rounded, Icons.chat_bubble_outline_rounded, '树洞'),
+                _buildNavItem(4, Icons.person_rounded, Icons.person_outline_rounded, '我的'),
+              ],
+            ),
           ),
         ),
-        child: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          onTap: (index) => setState(() => _currentIndex = index),
-          backgroundColor: AppColors.background,
-          elevation: 0,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: AppColors.mainText,
-          unselectedItemColor: AppColors.weakText,
-          selectedLabelStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
-          unselectedLabelStyle: const TextStyle(fontSize: 12),
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), activeIcon: Icon(Icons.home), label: '首页'),
-            BottomNavigationBarItem(icon: Icon(Icons.edit_note_outlined), activeIcon: Icon(Icons.edit_note), label: '刷题'),
-            BottomNavigationBarItem(icon: Icon(Icons.search_outlined), activeIcon: Icon(Icons.search), label: '查校'),
-            BottomNavigationBarItem(icon: Icon(Icons.forum_outlined), activeIcon: Icon(Icons.forum), label: '树洞'),
-            BottomNavigationBarItem(icon: Icon(Icons.person_outline), activeIcon: Icon(Icons.person), label: '我的'),
+      ),
+    );
+  }
+
+  Widget _buildNavItem(int index, IconData activeIcon, IconData icon, String label) {
+    final isSelected = _currentIndex == index;
+    return GestureDetector(
+      onTap: () => setState(() => _currentIndex = index),
+      behavior: HitTestBehavior.opaque,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        decoration: BoxDecoration(
+          color: isSelected ? AppColors.primaryLight : Colors.transparent,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              isSelected ? activeIcon : icon,
+              size: 22,
+              color: isSelected ? AppColors.primary : AppColors.weakText,
+            ),
+            if (isSelected) ...[
+              const SizedBox(width: 6),
+              Text(label, style: TextStyle(
+                fontSize: 13, fontWeight: FontWeight.w600, color: AppColors.primary,
+              )),
+            ],
           ],
         ),
       ),

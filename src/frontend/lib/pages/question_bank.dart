@@ -15,9 +15,7 @@ class _QuestionBankPageState extends State<QuestionBankPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() {
-      Provider.of<StudyProvider>(context, listen: false).loadData();
-    });
+    Future.microtask(() => Provider.of<StudyProvider>(context, listen: false).loadData());
   }
 
   @override
@@ -25,79 +23,106 @@ class _QuestionBankPageState extends State<QuestionBankPage> {
     final study = Provider.of<StudyProvider>(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('备考')),
-      body: !study.isLoaded
-          ? const Center(child: CircularProgressIndicator())
+      body: SafeArea(
+        child: !study.isLoaded
+          ? const Center(child: CircularProgressIndicator(color: AppColors.primary))
           : SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+              padding: const EdgeInsets.fromLTRB(24, 24, 24, 32),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('3+证书 真题库',
-                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600, color: AppColors.mainText)),
+                  const Text('题库', style: TextStyle(
+                    fontSize: 28, fontWeight: FontWeight.w800, color: AppColors.mainText)),
+                  const SizedBox(height: 4),
+                  const Text('3+证书高职高考真题精选', style: TextStyle(
+                    fontSize: 14, color: AppColors.subText)),
+                  const SizedBox(height: 28),
+                  
+                  _buildSubjectCard(context, study, '语文', '字音·成语·病句·阅读',
+                    Icons.auto_stories_rounded, AppColors.primary),
+                  const SizedBox(height: 16),
+                  _buildSubjectCard(context, study, '数学', '函数·三角·数列·概率',
+                    Icons.calculate_rounded, AppColors.secondary),
+                  const SizedBox(height: 16),
+                  _buildSubjectCard(context, study, '英语', '语法·词汇·阅读理解',
+                    Icons.translate_rounded, AppColors.warning),
+                  
                   const SizedBox(height: 32),
-                  _buildSubjectTile(context, study, '语文', '2024年真题已更新'),
-                  _buildSubjectTile(context, study, '数学', '考点精炼与公式汇总'),
-                  _buildSubjectTile(context, study, '英语', '语法与阅读专项突破'),
-                  const SizedBox(height: 48),
-                  const Text('专项练习',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: AppColors.mainText)),
+                  const Text('专项练习', style: TextStyle(
+                    fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.mainText)),
                   const SizedBox(height: 16),
                   Wrap(
-                    spacing: 12,
-                    runSpacing: 12,
-                    children: [
-                      _buildSmallTag('基础考点'),
-                      _buildSmallTag('重难点突破'),
-                      _buildSmallTag('模拟考场'),
-                      _buildSmallTag('错题本'),
-                    ],
+                    spacing: 10,
+                    runSpacing: 10,
+                    children: ['基础考点', '重难点突破', '模拟考场', '错题本', '收藏夹', '历年真题']
+                        .map((t) => _buildTag(t)).toList(),
                   ),
                 ],
               ),
             ),
+      ),
     );
   }
 
-  Widget _buildSubjectTile(BuildContext context, StudyProvider study, String subject, String subtitle) {
+  Widget _buildSubjectCard(BuildContext context, StudyProvider study,
+      String subject, String desc, IconData icon, Color color) {
     final count = study.getSubjectCount(subject);
-    return Container(
-      margin: const EdgeInsets.only(bottom: 24),
-      decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(color: AppColors.divider, width: 0.5)),
-      ),
-      child: ListTile(
-        contentPadding: const EdgeInsets.symmetric(vertical: 8),
-        title: Row(
+    return GestureDetector(
+      onTap: () {
+        study.resetQuiz();
+        Navigator.push(context, MaterialPageRoute(builder: (_) => QuizView(subject: subject)));
+      },
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: AppColors.cardBg,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: AppColors.divider),
+        ),
+        child: Row(
           children: [
-            Text(subject,
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: AppColors.mainText)),
-            const SizedBox(width: 8),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-              decoration: BoxDecoration(color: AppColors.areaBg, borderRadius: BorderRadius.circular(4)),
-              child: Text('$count题', style: const TextStyle(fontSize: 10, color: AppColors.subText)),
+              width: 56, height: 56,
+              decoration: BoxDecoration(
+                color: color.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Icon(icon, color: color, size: 28),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(subject, style: const TextStyle(
+                    fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.mainText)),
+                  const SizedBox(height: 4),
+                  Text(desc, style: const TextStyle(fontSize: 13, color: AppColors.subText)),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              decoration: BoxDecoration(
+                color: color.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text('$count题', style: TextStyle(
+                fontSize: 13, fontWeight: FontWeight.w600, color: color)),
             ),
           ],
         ),
-        subtitle: Text(subtitle, style: const TextStyle(fontSize: 13, color: AppColors.subText)),
-        trailing: const Icon(Icons.chevron_right, size: 20, color: AppColors.weakText),
-        onTap: () {
-          study.resetQuiz();
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => QuizView(subject: subject)));
-        },
       ),
     );
   }
 
-  Widget _buildSmallTag(String label) {
+  Widget _buildTag(String label) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
       decoration: BoxDecoration(
-        color: AppColors.background,
+        color: AppColors.cardBg,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: AppColors.divider, width: 0.5),
+        border: Border.all(color: AppColors.divider),
       ),
       child: Text(label, style: const TextStyle(fontSize: 13, color: AppColors.mainText)),
     );
