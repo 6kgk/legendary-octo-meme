@@ -4,6 +4,7 @@ import 'ai_tutor_page.dart';
 import 'daily_practice_page.dart';
 import 'wrong_answers_page.dart';
 import '../services/study_provider.dart';
+import '../services/storage_service.dart';
 import '../theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,10 +15,30 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final StorageService _storage = StorageService();
+  int _streak = 0;
+  int _totalAnswered = 0;
+  int _totalCorrect = 0;
+
   @override
   void initState() {
     super.initState();
-    Future.microtask(() => Provider.of<StudyProvider>(context, listen: false).loadData());
+    Future.microtask(() async {
+      await Provider.of<StudyProvider>(context, listen: false).loadData();
+      _loadUserStats();
+    });
+  }
+
+  Future<void> _loadUserStats() async {
+    final streak = await _storage.getStudyStreak();
+    final stats = await _storage.getTotalAnswered();
+    if (mounted) {
+      setState(() {
+        _streak = streak;
+        _totalAnswered = stats['total'] ?? 0;
+        _totalCorrect = stats['correct'] ?? 0;
+      });
+    }
   }
 
   @override
@@ -58,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 28),
 
-              // Banner card
+              // Banner card with streak
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(24),
@@ -69,12 +90,59 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text('今日目标', style: TextStyle(
-                      fontSize: 13, color: Colors.white70)),
+                    Row(
+                      children: [
+                        const Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('今日目标', style: TextStyle(
+                                fontSize: 13, color: Colors.white70)),
+                              SizedBox(height: 8),
+                              Text('完成 3 科各 5 道练习题', style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          child: Column(
+                            children: [
+                              Text('$_streak', style: const TextStyle(
+                                fontSize: 24, fontWeight: FontWeight.w800, color: Colors.white)),
+                              const Text('连续天', style: TextStyle(
+                                fontSize: 11, color: Colors.white70)),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                    // 总答题进度
+                    Row(
+                      children: [
+                        Text('累计答题 $_totalAnswered 道', style: const TextStyle(
+                          fontSize: 12, color: Colors.white70)),
+                        const Spacer(),
+                        Text('正确率 ${_totalAnswered > 0 ? (_totalCorrect / _totalAnswered * 100).round() : 0}%',
+                          style: const TextStyle(fontSize: 12, color: Colors.white70)),
+                      ],
+                    ),
                     const SizedBox(height: 8),
-                    const Text('完成 3 科各 5 道练习题', style: TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white)),
-                    const SizedBox(height: 20),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(4),
+                      child: LinearProgressIndicator(
+                        value: _totalAnswered > 0 ? (_totalCorrect / _totalAnswered).clamp(0.0, 1.0) : 0,
+                        minHeight: 4,
+                        backgroundColor: Colors.white.withOpacity(0.2),
+                        valueColor: const AlwaysStoppedAnimation(Colors.white),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
                     SizedBox(
                       width: double.infinity,
                       height: 44,
@@ -149,7 +217,11 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _buildStatCard(String label, int count, Color color) {
+  Widget _buildStatCard(String label, int totalCount, Color color) {
+    // 计算该科目真实进度（已答题/总题数）—— 这里简化为 totalAnswered 按科目均分
+    final answeredPerSubject = _totalAnswered > 0 ? (_totalAnswered / 3).round() : 0;
+    final progress = totalCount > 0 ? (answeredPerSubject / totalCount).clamp(0.0, 1.0) : 0.0;
+
     return Expanded(
       child: Container(
         padding: const EdgeInsets.all(16),
@@ -160,26 +232,18 @@ class _HomePageState extends State<HomePage> {
         ),
         child: Column(
           children: [
-            Text('$count', style: TextStyle(
+            Text('$totalCount', style: TextStyle(
               fontSize: 24, fontWeight: FontWeight.w800, color: color)),
             const SizedBox(height: 4),
             Text(label, style: const TextStyle(fontSize: 12, color: AppColors.subText)),
             const SizedBox(height: 8),
-            Container(
-              height: 4,
-              decoration: BoxDecoration(
-                color: color.withOpacity(0.15),
-                borderRadius: BorderRadius.circular(2),
-              ),
-              child: FractionallySizedBox(
-                alignment: Alignment.centerLeft,
-                widthFactor: 0.6,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: color,
-                    borderRadius: BorderRadius.circular(2),
-                  ),
-                ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(2),
+              child: LinearProgressIndicator(
+                value: progress,
+                minHeight: 4,
+                backgroundColor: color.withOpacity(0.15),
+                valueColor: AlwaysStoppedAnimation(color),
               ),
             ),
           ],

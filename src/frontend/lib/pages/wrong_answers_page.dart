@@ -4,7 +4,7 @@ import '../services/storage_service.dart';
 import '../services/study_provider.dart';
 import '../models/app_models.dart';
 import '../theme.dart';
-// quiz_view import removed - not needed here
+import 'wrong_practice_page.dart';
 
 class WrongAnswersPage extends StatefulWidget {
   const WrongAnswersPage({super.key});
@@ -48,6 +48,15 @@ class _WrongAnswersPageState extends State<WrongAnswersPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('错题本'),
+        actions: [
+          if (_wrongQuestions.isNotEmpty)
+            TextButton.icon(
+              onPressed: _startPractice,
+              icon: const Icon(Icons.replay_rounded, size: 18),
+              label: const Text('重新练习'),
+              style: TextButton.styleFrom(foregroundColor: AppColors.accent),
+            ),
+        ],
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
@@ -85,6 +94,19 @@ class _WrongAnswersPageState extends State<WrongAnswersPage> {
                   },
                 ),
     );
+  }
+
+  Future<void> _startPractice() async {
+    final result = await Navigator.push<List<String>>(
+      context,
+      MaterialPageRoute(builder: (_) => WrongPracticePage(questions: List.from(_wrongQuestions))),
+    );
+    // 如果有题目被移除（答对了），刷新列表
+    if (result != null && result.isNotEmpty) {
+      setState(() {
+        _wrongQuestions.removeWhere((q) => result.contains(q.id));
+      });
+    }
   }
 
   Widget _buildEmptyState() {

@@ -45,6 +45,15 @@ class StorageService {
     return prefs.getStringList(_keyWrongAnswers) ?? [];
   }
 
+  Future<void> removeWrongAnswer(String questionId) async {
+    final prefs = await SharedPreferences.getInstance();
+    final wrongAnswers = prefs.getStringList(_keyWrongAnswers) ?? [];
+    if (wrongAnswers.contains(questionId)) {
+      wrongAnswers.remove(questionId);
+      await prefs.setStringList(_keyWrongAnswers, wrongAnswers);
+    }
+  }
+
   // --- Study Records ---
   // Record structure: { "date": "2026-04-10", "subject": "语文", "correct": 10, "total": 15 }
   Future<void> saveStudyRecord(String date, String subject, int correctCount, int totalCount) async {
@@ -85,5 +94,45 @@ class StorageService {
     return recordsJson
         .map((e) => jsonDecode(e) as Map<String, dynamic>)
         .toList();
+  }
+
+  // --- Streak (连续学习天数) ---
+  Future<int> getStudyStreak() async {
+    final records = await getStudyRecords();
+    if (records.isEmpty) return 0;
+
+    // 收集所有学习过的日期（去重）
+    final Set<String> studyDates = {};
+    for (var r in records) {
+      studyDates.add(r['date'] as String);
+    }
+
+    // 从今天开始往前数连续天数
+    final now = DateTime.now();
+    int streak = 0;
+    for (int i = 0; i < 365; i++) {
+      final date = now.subtract(Duration(days: i));
+      final dateStr = '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
+      if (studyDates.contains(dateStr)) {
+        streak++;
+      } else {
+        // 如果是今天没学但昨天学了，streak从昨天开始算
+        if (i == 0) continue;
+        break;
+      }
+    }
+    return streak;
+  }
+
+  // --- 总答题数统计 ---
+  Future<Map<String, int>> getTotalAnswered() async {
+    final records = await getStudyRecords();
+    int totalCorrect = 0;
+    int totalAnswered = 0;
+    for (var r in records) {
+      totalCorrect += (r['correct'] as int);
+      totalAnswered += (r['total'] as int);
+    }
+    return {'correct': totalCorrect, 'total': totalAnswered};
   }
 }

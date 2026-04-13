@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/study_provider.dart';
 import 'quiz_view.dart';
+import 'wrong_answers_page.dart';
+import 'favorites_page.dart';
+import 'daily_practice_page.dart';
 import '../theme.dart';
 
 class QuestionBankPage extends StatefulWidget {
@@ -54,8 +57,20 @@ class _QuestionBankPageState extends State<QuestionBankPage> {
                   Wrap(
                     spacing: 10,
                     runSpacing: 10,
-                    children: ['基础考点', '重难点突破', '模拟考场', '错题本', '收藏夹', '历年真题']
-                        .map((t) => _buildTag(t)).toList(),
+                    children: [
+                      _buildActionTag('每日一练', Icons.bolt_rounded, AppColors.warning,
+                        () => Navigator.push(context, MaterialPageRoute(builder: (_) => const DailyPracticePage()))),
+                      _buildActionTag('错题本', Icons.replay_rounded, AppColors.accent,
+                        () => Navigator.push(context, MaterialPageRoute(builder: (_) => const WrongAnswersPage()))),
+                      _buildActionTag('收藏夹', Icons.bookmark_rounded, AppColors.primary,
+                        () => Navigator.push(context, MaterialPageRoute(builder: (_) => const FavoritesPage()))),
+                      _buildActionTag('语文专练', Icons.auto_stories_rounded, AppColors.primary,
+                        () { study.resetQuiz(); Navigator.push(context, MaterialPageRoute(builder: (_) => const QuizView(subject: '语文'))); }),
+                      _buildActionTag('数学专练', Icons.calculate_rounded, AppColors.secondary,
+                        () { study.resetQuiz(); Navigator.push(context, MaterialPageRoute(builder: (_) => const QuizView(subject: '数学'))); }),
+                      _buildActionTag('英语专练', Icons.translate_rounded, AppColors.warning,
+                        () { study.resetQuiz(); Navigator.push(context, MaterialPageRoute(builder: (_) => const QuizView(subject: '英语'))); }),
+                    ],
                   ),
                 ],
               ),
@@ -116,15 +131,25 @@ class _QuestionBankPageState extends State<QuestionBankPage> {
     );
   }
 
-  Widget _buildTag(String label) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
-      decoration: BoxDecoration(
-        color: AppColors.cardBg,
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: AppColors.divider),
+  Widget _buildActionTag(String label, IconData icon, Color color, VoidCallback onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        decoration: BoxDecoration(
+          color: AppColors.cardBg,
+          borderRadius: BorderRadius.circular(24),
+          border: Border.all(color: AppColors.divider),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 16, color: color),
+            const SizedBox(width: 6),
+            Text(label, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: AppColors.mainText)),
+          ],
+        ),
       ),
-      child: Text(label, style: const TextStyle(fontSize: 13, color: AppColors.mainText)),
     );
   }
 }

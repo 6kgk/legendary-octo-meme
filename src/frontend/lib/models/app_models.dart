@@ -65,13 +65,30 @@ class School {
   }
 }
 
+class Comment {
+  final String id;
+  final String author;
+  final String time;
+  final String content;
+
+  Comment({
+    required this.id,
+    required this.author,
+    required this.time,
+    required this.content,
+  });
+}
+
 class Post {
   final String id;
   final String author;
   final String time;
   final String content;
   int likes;
-  int commentsCount;
+  bool isLiked;
+  final List<Comment> comments;
+
+  int get commentsCount => comments.length;
 
   Post({
     required this.id,
@@ -79,6 +96,7 @@ class Post {
     required this.time,
     required this.content,
     this.likes = 0,
-    this.commentsCount = 0,
-  });
+    this.isLiked = false,
+    List<Comment>? comments,
+  }) : comments = comments ?? [];
 }
