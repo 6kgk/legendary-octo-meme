@@ -19,8 +19,10 @@ class _AITutorPageState extends State<AITutorPage> {
 
   final List<String> _quickChips = ['数学三角函数怎么解', '英语语法填空技巧', '语文成语辨析方法', '3+证书报考政策'];
 
+  static const String _welcomeMsg = '你好！我是你的 3+证书 AI 助教，由 DeepSeek 大模型驱动。你可以问我任何关于语文、数学、英语的题目，我会给你详细的解析。';
+
   void _sendMessage(String text) async {
-    if (text.trim().isEmpty) return;
+    if (text.trim().isEmpty || _isLoading) return;
     setState(() {
       _messages.add({'role': 'user', 'content': text.trim()});
       _controller.clear();
@@ -54,6 +56,33 @@ class _AITutorPageState extends State<AITutorPage> {
     });
   }
 
+  void _confirmClear(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        title: const Text('清空对话', style: TextStyle(fontWeight: FontWeight.w700)),
+        content: const Text('确定要清空所有对话记录吗？'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('取消', style: TextStyle(color: AppColors.subText)),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(ctx);
+              setState(() {
+                _messages.clear();
+                _messages.add({'role': 'ai', 'content': _welcomeMsg});
+              });
+            },
+            child: const Text('清空', style: TextStyle(color: AppColors.accent)),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +90,7 @@ class _AITutorPageState extends State<AITutorPage> {
         title: const Text('AI 助教'),
         actions: [
           Container(
-            margin: const EdgeInsets.only(right: 16),
+            margin: const EdgeInsets.only(left: 0, right: 8),
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
               color: AppColors.secondaryLight,
@@ -75,6 +104,11 @@ class _AITutorPageState extends State<AITutorPage> {
                 Text('DeepSeek', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: AppColors.secondary)),
               ],
             ),
+          ),
+          IconButton(
+            icon: const Icon(Icons.delete_sweep_rounded, size: 22),
+            tooltip: '清空对话',
+            onPressed: () => _confirmClear(context),
           ),
         ],
       ),
@@ -174,6 +208,7 @@ class _AITutorPageState extends State<AITutorPage> {
   }
 
   Widget _buildInput() {
+    final canSend = !_isLoading;
     return Container(
       padding: EdgeInsets.fromLTRB(16, 12, 16, MediaQuery.of(context).padding.bottom + 12),
       decoration: BoxDecoration(
@@ -181,29 +216,41 @@ class _AITutorPageState extends State<AITutorPage> {
         boxShadow: [BoxShadow(color: AppColors.mainText.withOpacity(0.04), blurRadius: 20, offset: const Offset(0, -4))],
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Expanded(
             child: TextField(
               controller: _controller,
+              maxLines: 3,
+              minLines: 1,
+              enabled: !_isLoading,
               decoration: InputDecoration(
-                hintText: '输入你的问题...',
+                hintText: _isLoading ? 'AI 正在回复中...' : '输入你的问题...',
                 filled: true, fillColor: AppColors.areaBg,
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(24), borderSide: BorderSide.none),
-                contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(18), borderSide: BorderSide.none),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               ),
-              onSubmitted: _sendMessage,
+              textInputAction: TextInputAction.send,
+              onSubmitted: canSend ? _sendMessage : null,
             ),
           ),
           const SizedBox(width: 8),
           GestureDetector(
-            onTap: () => _sendMessage(_controller.text),
-            child: Container(
-              width: 48, height: 48,
+            onTap: canSend ? () => _sendMessage(_controller.text) : null,
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              width: 46, height: 46,
               decoration: BoxDecoration(
-                gradient: AppColors.primaryGradient,
-                borderRadius: BorderRadius.circular(16),
+                gradient: canSend ? AppColors.primaryGradient : null,
+                color: canSend ? null : AppColors.areaBg,
+                borderRadius: BorderRadius.circular(14),
               ),
-              child: const Icon(Icons.send_rounded, color: Colors.white, size: 20),
+              child: Icon(
+                Icons.send_rounded,
+                color: canSend ? Colors.white : AppColors.weakText,
+                size: 20,
+              ),
             ),
           ),
         ],

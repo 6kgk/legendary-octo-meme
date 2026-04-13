@@ -4,6 +4,7 @@ import '../services/study_provider.dart';
 import '../services/storage_service.dart';
 import '../theme.dart';
 import 'package:intl/intl.dart';
+import 'wrong_answers_page.dart';
 
 class QuizView extends StatefulWidget {
   final String subject;
@@ -131,30 +132,140 @@ class _QuizViewState extends State<QuizView> {
 
   Widget _buildResultScreen(StudyProvider provider, int total) {
     final correct = provider.correctCount;
+    final wrong = total - correct;
     final percentage = (correct / total * 100).round();
+
+    // 分段激励语
+    String emoji, headline, subtitle;
+    Color accentColor;
+    if (percentage >= 90) {
+      emoji = '🏆'; headline = '太厉害了！'; subtitle = '满分冲刺中，继续保持！';
+      accentColor = const Color(0xFFFFB800);
+    } else if (percentage >= 70) {
+      emoji = '👍'; headline = '表现不错！'; subtitle = '再巩固几道，更上一层楼！';
+      accentColor = AppColors.primary;
+    } else if (percentage >= 50) {
+      emoji = '💪'; headline = '继续努力！'; subtitle = '错题是最好的老师，去看看吧。';
+      accentColor = AppColors.secondary;
+    } else {
+      emoji = '📖'; headline = '加油加油！'; subtitle = '基础题要多练，错题本等着你！';
+      accentColor = AppColors.accent;
+    }
+
     return Scaffold(
-      appBar: AppBar(title: Text('${widget.subject} 练习报告')),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(32),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('$percentage%',
-                  style: const TextStyle(fontSize: 64, fontWeight: FontWeight.w700, color: AppColors.mainText)),
-              const SizedBox(height: 8),
-              Text('答对 $correct / $total 题',
-                  style: const TextStyle(fontSize: 16, color: AppColors.subText)),
-              const SizedBox(height: 48),
-              ElevatedButton(
+      backgroundColor: AppColors.background,
+      appBar: AppBar(
+        title: Text('${widget.subject} 练习报告'),
+        leading: IconButton(
+          icon: const Icon(Icons.close),
+          onPressed: () { provider.resetQuiz(); Navigator.pop(context); },
+        ),
+        automaticallyImplyLeading: false,
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          children: [
+            const SizedBox(height: 16),
+            // 激励卡
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(28),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [accentColor, accentColor.withOpacity(0.7)],
+                  begin: Alignment.topLeft, end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Column(
+                children: [
+                  Text(emoji, style: const TextStyle(fontSize: 48)),
+                  const SizedBox(height: 12),
+                  Text(headline, style: const TextStyle(
+                    fontSize: 26, fontWeight: FontWeight.w800, color: Colors.white)),
+                  const SizedBox(height: 6),
+                  Text(subtitle, style: TextStyle(
+                    fontSize: 14, color: Colors.white.withOpacity(0.85))),
+                  const SizedBox(height: 24),
+                  Text('$percentage%', style: const TextStyle(
+                    fontSize: 64, fontWeight: FontWeight.w900, color: Colors.white)),
+                  const Text('正确率', style: TextStyle(
+                    fontSize: 14, color: Colors.white70)),
+                ],
+              ),
+            ),
+            const SizedBox(height: 24),
+            // 详细数据
+            Row(
+              children: [
+                _buildResultStat('答题总数', '$total 题', AppColors.mainText),
+                const SizedBox(width: 12),
+                _buildResultStat('答对', '$correct 题', Colors.green),
+                const SizedBox(width: 12),
+                _buildResultStat('答错', '$wrong 题', AppColors.accent),
+              ],
+            ),
+            const SizedBox(height: 32),
+            // 操作按钮
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
                 onPressed: () {
                   provider.resetQuiz();
-                  Navigator.pop(context);
+                  // 原地重做：pop当前页，重新push
+                  Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (_) => QuizView(subject: widget.subject)));
                 },
-                child: const Text('返回题库'),
+                icon: const Icon(Icons.replay_rounded, size: 20),
+                label: const Text('再做一遍'),
               ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 12),
+            if (wrong > 0)
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton.icon(
+                  onPressed: () {
+                    provider.resetQuiz();
+                    Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (_) => const WrongAnswersPage()));
+                  },
+                  icon: const Icon(Icons.replay_circle_filled_rounded, size: 20),
+                  label: Text('查看错题（$wrong 道）'),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: AppColors.accent,
+                    side: const BorderSide(color: AppColors.accent),
+                  ),
+                ),
+              ),
+            const SizedBox(height: 12),
+            TextButton(
+              onPressed: () { provider.resetQuiz(); Navigator.pop(context); },
+              child: const Text('返回题库', style: TextStyle(color: AppColors.subText)),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildResultStat(String label, String value, Color color) {
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        decoration: BoxDecoration(
+          color: AppColors.cardBg,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: AppColors.divider),
+        ),
+        child: Column(
+          children: [
+            Text(value, style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.w800, color: color)),
+            const SizedBox(height: 4),
+            Text(label, style: const TextStyle(fontSize: 12, color: AppColors.subText)),
+          ],
         ),
       ),
     );

@@ -139,7 +139,6 @@ class _PostCardState extends State<_PostCard> with SingleTickerProviderStateMixi
   }
 
   void _showComments() {
-    final provider = Provider.of<ForumProvider>(context, listen: false);
     final commentController = TextEditingController();
 
     showModalBottomSheet(
@@ -249,7 +248,8 @@ class _PostCardState extends State<_PostCard> with SingleTickerProviderStateMixi
                       GestureDetector(
                         onTap: () {
                           if (commentController.text.trim().isNotEmpty) {
-                            provider.addComment(widget.post.id, commentController.text.trim());
+                            final forumProvider = Provider.of<ForumProvider>(context, listen: false);
+                            forumProvider.addComment(widget.post.id, commentController.text.trim());
                             commentController.clear();
                             setSheetState(() {});
                           }
@@ -276,7 +276,8 @@ class _PostCardState extends State<_PostCard> with SingleTickerProviderStateMixi
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<ForumProvider>(context);
+    // 订阅 ForumProvider，确保点赞/评论后 UI 重建
+    Provider.of<ForumProvider>(context);
     final post = widget.post;
 
     return Container(
