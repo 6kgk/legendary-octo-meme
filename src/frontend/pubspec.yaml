@@ -1,0 +1,29 @@
+name: flutter_app
+description: "粤职通 - 广东3+证书高职高考备考助手"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.10+1
+  provider: ^6.1.2
+  http: ^1.2.2
+  shared_preferences: ^2.3.3
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/questions.json
+    - assets/data/schools.json
