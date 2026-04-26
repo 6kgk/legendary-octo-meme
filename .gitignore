@@ -1,9 +1,0 @@
-﻿node_modules/
-build/
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.pub/
-.pub-cache/
-*.log
-.env
