@@ -1,0 +1,8 @@
+{
+  "appId": "com.sms.ex",
+  "appName": "短信",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
